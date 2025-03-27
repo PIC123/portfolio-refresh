@@ -13,8 +13,6 @@ type Props = {
 export default function ProjectModal({ project, onClose }: Props) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-  if (!project) return null;
-
   useEffect(() => {
     if (project) setActiveImageIndex(0); // reset on modal open
   }, [project]);
