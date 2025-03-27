@@ -1,5 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
+import AsciiSparkles from "@/components/AsciiSparkles";
 
 export const metadata = {
   title: "Phil Cherner | Portfolio",
@@ -27,8 +28,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             ))}
           </div>
         </nav>
-        <div className="pt-24 px-4 bg-black text-white font-terminal text-left">
-          {children}
+        <div className="pt-24 px-4 bg-black text-white font-terminal">
+          <div className="max-w-6xl mx-auto flex flex-col lg:flex-row">
+            <div className="w-full lg:w-2/3 pr-4">
+              {children}
+            </div>
+            <div className="hidden lg:block lg:w-1/3 pl-4 fixed right-0 top-0 h-full overflow-hidden pointer-events-none">
+              <AsciiSparkles />
+            </div>
+          </div>
         </div>
       </body>
     </html>
