@@ -17,6 +17,8 @@ export default function ProjectModal({ project, onClose }: Props) {
     if (project) setActiveImageIndex(0); // reset on modal open
   }, [project]);
 
+  if (!project) return null;
+
   return (
     <AnimatePresence>
       <motion.div
