@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "framer-motion";
 
 import ProjectsGallery from "@/components/ProjectsGallery";
@@ -19,7 +18,7 @@ export default function HomePage() {
             transition={{ duration: 1 }}
           >
             <span className="animate-typing overflow-hidden whitespace-nowrap border-r-2 border-white pr-2">
-              Hi, I'm Phil
+              Hi, I&apos;m Phil
             </span>
           </motion.h1>
           <motion.p
@@ -70,13 +69,13 @@ export default function HomePage() {
         <div className="flex-1">
           <h2 className="text-3xl font-pixel mb-6">About Me</h2>
           <p className="text-lg font-terminal leading-relaxed mb-4">
-            I'm a highly motivated engineer with years of experience working in
-            fast-paced, interdisciplinary environments. I have a very strong
-            background in C#, Javascript/Typescript, Python and Unity. With
-            experience creating applications for a range of AR/VR technologies,
-            I'm passionate about building new technologies and experiences that
-            inspire in order to develop the future of human/computer
-            interaction.
+            I&apos;m a highly motivated engineer with years of experience
+            working in fast-paced, interdisciplinary environments. I have a very
+            strong background in C#, Javascript/Typescript, Python and Unity.
+            With experience creating applications for a range of AR/VR
+            technologies, I&apos;m passionate about building new technologies
+            and experiences that inspire in order to develop the future of
+            human/computer interaction.
           </p>
           <p className="text-lg font-terminal leading-relaxed mb-4">
             I recently completed my Masters in AI at MIT and am doing research
@@ -120,13 +119,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ✅ LET'S BUILD SOMETHING */}
+      {/* ✅ LETS BUILD SOMETHING */}
       <section id="contact" className="max-w-4xl mx-auto w-full px-4 pb-32">
-        <h2 className="text-3xl font-pixel mb-6">Let's Build Something</h2>
+        <h2 className="text-3xl font-pixel mb-6">Let&apos;s Build Something</h2>
         <p className="text-lg mb-4">
-          I'm always excited to collaborate on new ideas, whether you're looking
-          for a creative technologist, a research partner, or just someone to
-          jam on weird and wonderful concepts with. Let's connect!
+          I&apos;m always excited to collaborate on new ideas, whether
+          you&apos;re looking for a creative technologist, a research partner,
+          or just someone to jam on weird and wonderful concepts with.
+          Let&apos;s connect!
         </p>
         <div className="mt-6 flex flex-wrap gap-4 text-sm">
           <a

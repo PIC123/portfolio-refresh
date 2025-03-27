@@ -8,7 +8,6 @@ const NUM_SPARKLES = 50;
 export default function AsciiSparkles() {
   const [sparkles, setSparkles] = useState<JSX.Element[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
-  const positions = useRef<{ x: number; y: number }[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,7 +15,9 @@ export default function AsciiSparkles() {
       const layers = document.querySelectorAll(".sparkle-layer");
       layers.forEach((layer, index) => {
         const depth = (index + 1) * 5;
-        (layer as HTMLElement).style.transform = `translateY(${scrollY / depth}px)`;
+        (layer as HTMLElement).style.transform = `translateY(${
+          scrollY / depth
+        }px)`;
       });
     };
 
@@ -24,11 +25,9 @@ export default function AsciiSparkles() {
       const bounds = containerRef.current?.getBoundingClientRect();
       if (!bounds) return;
 
-      const cx = e.clientX - bounds.left;
-      const cy = e.clientY - bounds.top;
-
       const layers = containerRef.current?.querySelectorAll(".sparkle-layer");
       layers?.forEach((layer, i) => {
+        console.log(i);
         const el = layer as HTMLElement;
         const rect = el.getBoundingClientRect();
         const lx = rect.left + rect.width / 2;
@@ -78,7 +77,10 @@ export default function AsciiSparkles() {
   }, []);
 
   return (
-    <div ref={containerRef} className="absolute top-0 left-0 w-full h-full pointer-events-none">
+    <div
+      ref={containerRef}
+      className="absolute top-0 left-0 w-full h-full pointer-events-none"
+    >
       <style>{`
         @keyframes float {
           0% { transform: translateY(0); opacity: 1; }
