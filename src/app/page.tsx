@@ -30,8 +30,8 @@ export default function HomePage() {
   const isIntroInView = useInView(introRef);
 
   return (
-    <main className="min-h-screen flex flex-col items-center gap-24 bg-black text-white font-terminal text-left">
-      <section className="pt-48 w-full px-4">
+    <main className="min-h-screen flex flex-col items-center gap-24">
+      <section className="pt-48 text-center">
         <motion.h1
           className="text-4xl md:text-6xl font-pixel mb-4 inline-block"
           initial={{ opacity: 0 }}
@@ -43,7 +43,7 @@ export default function HomePage() {
           </span>
         </motion.h1>
         <motion.p
-          className="text-lg md:text-2xl max-w-2xl font-terminal"
+          className="text-lg md:text-2xl max-w-2xl mx-auto font-terminal text-left"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
@@ -55,7 +55,7 @@ export default function HomePage() {
       {sections.map((section, index) => (
         <motion.section
           key={section.title}
-          className="max-w-4xl px-8 font-terminal"
+          className="max-w-4xl px-8 text-left font-terminal"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
