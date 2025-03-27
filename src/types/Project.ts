@@ -7,4 +7,5 @@ export interface Project {
   tags?: string[];
   tools?: string[];
   year?: string;
+  writeup?: string;
 }

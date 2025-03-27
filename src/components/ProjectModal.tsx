@@ -47,24 +47,24 @@ export default function ProjectModal({ project, onClose }: Props) {
             ✕
           </button>
 
-          <h2 className="text-2xl font-pixel mb-4">{project.title}</h2>
+          <h2 className="text-2xl font-pixel mb-4">{project?.title}</h2>
 
-          {project.images && project.images.length > 0 && (
+          {project?.images && project?.images.length > 0 && (
             <div className="relative w-full aspect-[16/9] overflow-hidden rounded mb-4">
               <Image
                 src={project.images[activeImageIndex]}
-                alt={project.title}
+                alt={project?.title}
                 fill
                 className="object-cover w-full h-full transition duration-500"
               />
 
-              {project.images?.length && project.images?.length > 1 && (
+              {project?.images?.length && project?.images?.length > 1 && (
                 <>
                   <button
                     onClick={() =>
                       setActiveImageIndex(
-                        (activeImageIndex - 1 + project.images!.length) %
-                          project.images!.length
+                        (activeImageIndex - 1 + project?.images!.length) %
+                          project?.images!.length
                       )
                     }
                     className="absolute left-2 top-1/2 -translate-y-1/2 px-3 py-2 bg-black bg-opacity-60 border border-white text-white rounded font-pixel text-lg hover:scale-110 hover:shadow-[0_0_6px_#fff] transition-all duration-200"
@@ -74,7 +74,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   <button
                     onClick={() =>
                       setActiveImageIndex(
-                        (activeImageIndex + 1) % project.images!.length
+                        (activeImageIndex + 1) % project?.images!.length
                       )
                     }
                     className="absolute right-2 top-1/2 -translate-y-1/2 px-3 py-2 bg-black bg-opacity-60 border border-white text-white rounded font-pixel text-lg hover:scale-110 hover:shadow-[0_0_6px_#fff] transition-all duration-200"
@@ -87,13 +87,13 @@ export default function ProjectModal({ project, onClose }: Props) {
           )}
 
           <p className="mb-6 font-terminal text-sm leading-relaxed">
-            {project.description}
+            {project?.description}
           </p>
 
           <div className="flex flex-wrap gap-4">
-            {project.url && (
+            {project?.url && (
               <a
-                href={project.url}
+                href={project?.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition"
@@ -101,9 +101,9 @@ export default function ProjectModal({ project, onClose }: Props) {
                 View Project
               </a>
             )}
-            {project.writeup && (
+            {project?.writeup && (
               <a
-                href={project.writeup}
+                href={project?.writeup}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition"
