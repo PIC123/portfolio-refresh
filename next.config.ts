@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: [
+      "pchernerportfoliosa.blob.core.windows.net",
+      "raw.githubusercontent.com",
+      "media.githubusercontent.com",
+      "github.com",
+    ],
+  },
 };
 
 export default nextConfig;

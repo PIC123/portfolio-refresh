@@ -8,6 +8,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = typeof window !== "undefined" ? window.location.pathname : "/";
+  const showRightPanel = pathname === "/" || pathname === "/about"; // Only show on homepage top & bottom
+
   return (
     <html lang="en">
       <body className="bg-black text-white font-terminal">
@@ -28,14 +31,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             ))}
           </div>
         </nav>
+
         <div className="pt-24 px-4 bg-black text-white font-terminal">
-          <div className="max-w-6xl mx-auto flex flex-col lg:flex-row">
-            <div className="w-full lg:w-2/3 pr-4">
+          <div className={`mx-auto flex flex-col ${showRightPanel ? "lg:flex-row max-w-6xl" : ""}`}>
+            <div className={`w-full ${showRightPanel ? "lg:w-2/3 pr-4" : ""}`}>
               {children}
             </div>
-            <div className="hidden lg:block lg:w-1/3 pl-4 fixed right-0 top-0 h-full overflow-hidden pointer-events-none">
-              <AsciiSparkles />
-            </div>
+
+            {showRightPanel && (
+              <div className="hidden lg:block lg:w-1/3 pl-4 fixed right-0 top-0 h-full overflow-hidden pointer-events-none">
+                <AsciiSparkles />
+              </div>
+            )}
           </div>
         </div>
       </body>

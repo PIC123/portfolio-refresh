@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 import { sections } from "@/data/sections";
+import ProjectsGallery from "@/components/ProjectsGallery";
 
 export default function HomePage() {
   const introRef = useRef(null);
@@ -50,6 +51,12 @@ export default function HomePage() {
           <div className="my-8 text-white-400 text-xs">
             {Array(80).fill('-').join('')}
           </div>
+
+          {index === 0 && (
+            <div className="w-full px-4 lg:px-16">
+              <ProjectsGallery />
+            </div>
+          )}
         </motion.section>
       ))}
     </main>
