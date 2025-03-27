@@ -1,587 +1,560 @@
 {
-    "name": "Phil",
-    "headerTaglineOne": "Building Digital Experiences And Products That Inspire",
-    "headerTaglineTwo": "Hey there! 👋 My name's Phil",
-    "headerTaglineThree": " I love building new technologies and experiences that inspire and shape the future of human-computer interaction.",
-    "headerTaglineFour": "Based in Cambridge, MA",
-    "showCursor": false,
-    "showBlog": false,
-    "darkMode": true,
-    "showResume": true,
-    "socials": [
-        {
-            "id": "1",
-            "title": "Github",
-            "img": "/images/github.png",
-            "link": "https://github.com/PIC123"
-        },
-        {
-            "id": "2",
-            "title": "LinkedIn",
-            "img": "/images/linkedin.png",
-            "link": "https://www.linkedin.com/in/pcherner/"
-        }
-    ],
-    "projects": [
-        {
-            "id": "2",
-            "title": "Earth Mission Control",
-            "description": "An immersive, multi-user VR/AR data visualization platform, aimed at enabling climate scientists to more effectively communicate their data stories to policy makers to drive more informed policy decisions.",
-            "images": [
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/emc3.gif", 
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/svalbard-sample-crop.gif", 
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/emc2.jpg", 
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/emc.png"
-            ],
-            "url": "https://www.media.mit.edu/projects/earth-mission-control/overview/",
-            "startDate": "2024",
-            "technologies": [
-                {
-                    "class": "devicon-csharp-plain",
-                    "name": "C#"
-                },
-                {
-                    "class": "fa-unity",
-                    "name": "Unity"
-                },
-                {
-                    "class": "devicon-vr-ar",
-                    "name": "VR/AR"
-                }
-            ]
-        },
-        {
-            "id": "3",
-            "title": "EarthBot",
-            "description": "A ChatGPT enabled bot to help navigate the experience and learn more about relevant concepts for just-in-time learning. Initially developed to enhance Earth Mission Control (EMC), the bot delivers a range of features including voice control, gaze tracking, question answering, translation support, and provides a more enjoyable experience through a personal exploration assistant.",
-            "images": [
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/earthbot.gif",
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/earthbot2.png",
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/earthbot3.png"
-            ],
-            "url": "https://docs.google.com/presentation/d/e/2PACX-1vTBnn_Doy7v0mNTh4NWbWeQDdHQ_Sdt7nJz4qanN8OdWPJmwfc2RfUFBXNsGiuVDsRlCjO2qIWMABRi/pub?start=false&loop=false&delayms=3000",
-            "startDate": "2024",
-            "technologies": [
-                {
-                    "class": "devicon-csharp-plain",
-                    "name": "C#"
-                },
-                {
-                    "class": "devicon-unity-plain",
-                    "name": "Unity"
-                },
-                {
-                    "class": "fa-robot",
-                    "name": "Generative AI"
-                },
-                {
-                    "class": "devicon-azure-plain",
-                    "name": "Azure"
-                },
-                {
-                    "class": "devicon-python-plain",
-                    "name": "Python"
-                },
-                {
-                    "class": "devicon-vr-ar",
-                    "name": "VR/AR"
-                }
-            ]
-        },
-        {
-            "id": "0",
-            "title": "Natural Harmony",
-            "description": "An interactive real-time generative Ai piece that seeks to reconnect a disassociated humanity to the planet we call home. Using Generative AI as a mirror, we see ourselves not as observers of nature, but as integral parts of its untouched beauty. We are transformed into mountains, rivers, and forests, inspiring a dialogue on living in harmony with nature. Presented at the Boston Museum of Science's Rise Up climate event and the MIT Sloan AI & ML Conference",
-            "startDate": "2024",
-            "images": [
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony5.gif",
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony2.jpg",
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony.jpg",
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony3.jpg"
-            ],
-            "technologies": [
-                {
-                    "class": "fa-computer-mouse",
-                    "name": "TouchDesigner"
-                },
-                {
-                    "class": "devicon-python-plain",
-                    "name": "Python"
-                },
-                {
-                    "class": "devicon-arduino-plain",
-                    "name": "Arduino"
-                },
-                {
-                    "class": "fa-robot",
-                    "name": "Generative AI"
-                }
-            ]
-        },
-        {
-            "id": "1",
-            "title": "Portico Projection Mapping",
-            "description": "Sound reactive projection mapping of a mural. Portico Brewery's mural came alive through projection mapping, transforming the static art into a dynamic visual installation for a music event. The addition of animations like blinking eyes and moving figures created an immersive experience, blending the mural art and musical performance.",
-            "startDate": "2023",
-            "images": [
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/portico-mapping.gif",
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/portico-mapping.jpg"
-
-            ],
-            "technologies": [
-                {
-                    "class": "fa fa-cogs",
-                    "name": "Projection Mapping"
-                }
-            ]
-        },
-        {
-            "id": "4",
-            "title": "eMote",
-            "description": "An evidence-based web-application aimed at helping people learn to identify and describe their emotions better through AI-assisted self-reflection prompts and personalized AI-generated visual art.",
-            "images": [
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/eMote-cover.png",
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/eMote3.png", 
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/eMote2.jpg"
-            ],
-            "url": "https://www.emoteai.art/",
-            "startDate": "2023",
-            "technologies":[
-                {
-                    "class": "devicon-react-original",
-                    "name": "React"
-                },
-                {
-                    "class": "devicon-azure-plain",
-                    "name": "Azure"
-                },
-                {
-                    "class": "devicon-python-plain",
-                    "name": "Python"
-                },
-                {
-                    "class": "fa-robot",
-                    "name": "Generative AI"
-                }
-            ]
-        },
-        {
-            "id": "5",
-            "title": "Tipping Points",
-            "description": "An immersive installation at the Museum of Science, using generative AI video and projection mapping. Tipping Points was built to convey the multitude of variables that support a healthy environment, and depict the consequences of removing too many factors. With AI-generated visuals projection-mapped onto the museum wall and a reimagined game of Jenga, Tipping Points is a multisensory experience that guides the audience through the potential collapse that awaits us if we don’t take action soon.",
-            "images": ["https://pchernerportfoliosa.blob.core.windows.net/projects/tipping-points.jpg"],
-            "url": "https://www.waveforms.media/nikuai",
-            "startDate": "2023",
-            "technologies":[
-                {
-                    "class": "fa fa-cogs",
-                    "name": "Projection Mapping"
-                },
-                {
-                    "class": "devicon-python-plain",
-                    "name": "Python"
-                },
-                {
-                    "class": "devicon-devicon-csharp-plain",
-                    "name": "Generative AI"
-                }
-            ]
-        },
-        {
-            "id": "6",
-            "title": "DreamWeaver",
-            "description": "An AI powered illustrated storybook that allows users to create limitless stories, fostering imagination and creativity by offering a platform for unlimited narrative exploration. User's co-create infinite choose-your-own-adventure stories with the AI about any topic, in any setting they want.",
-            "images": [
-                "https://raw.githubusercontent.com/PIC123/DreamWeaver/main/src/background.png",
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/dreamweaver.png"
-            ],
-            "url": "https://mango-flower-0aa90fa0f.3.azurestaticapps.net/",
-            "startDate": "2023",
-            "technologies":[
-                {
-                    "class": "devicon-react-original",
-                    "name": "React"
-                },
-                {
-                    "class": "devicon-azure-plain",
-                    "name": "Azure"
-                },
-                {
-                    "class": "devicon-python-plain",
-                    "name": "Python"
-                },
-                {
-                    "class": "fa-robot",
-                    "name": "Generative AI"
-                }
-            ]
-        },
-        {
-            "id": "7",
-            "title": "DreamMachine",
-            "description": "An art installation that combined a rotary phone, a custom API, and generative AI to enable users to speak their dreams and receive a custom AI-generated dream interpretation.",
-            "images": [
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/dream-machine.png",
-                "https://pchernerportfoliosa.blob.core.windows.net/projects/dream-machine2.png"],
-            "url": "https://lively-smoke-004d17f10.2.azurestaticapps.net/",
-            "startDate": "2023",
-            "technologies":[
-                {
-                    "class": "devicon-react-original",
-                    "name": "React"
-                },
-                {
-                    "class": "devicon-azure-plain",
-                    "name": "Azure"
-                },
-                {
-                    "class": "devicon-python-plain",
-                    "name": "Python"
-                },
-                {
-                    "class": "fa-robot",
-                    "name": "Generative AI"
-                },
-                {
-                    "class": "devicon-devicon-typescript-plain",
-                    "name": "Twilio"
-                }
-            ]
-        },
-        {
-            "id": "8",
-            "title": "FetchML",
-            "description": "This little guy is an AI that was trained with Reinforcement Learning using Unity's ML Agents platform. With just 15 minutes of training Bruce was able to learn to play fetch naturally with basic rewards for getting the ball and returning it.",
-            "images": ["https://media.githubusercontent.com/media/PIC123/FetchML-Quest/main/resources/fetchMLdemo.gif"],
-            "url": "https://github.com/PIC123/FetchML-Quest",
-            "startDate": "2021",
-            "technologies":[
-                {
-                    "class": "devicon-unity-plain",
-                    "name": "Unity"
-                },
-                {
-                    "class": "fa-robot",
-                    "name": "Reinforcement Learning"
-                }
-            ]
-        },
-        {
-            "id": "9",
-            "title": "RockPaperScissors(RPS) VR",
-            "description": "This demo app combines the Oculus Quest's hand tracking with gesture recognition and MRTK-Quest to play Rock, Paper, Scissors.",
-            "images": ["https://github.com/PIC123/RockPaperScissors-Quest/blob/main/resources/rockPaperScissorsDemo.gif?raw=true"],
-            "url": "https://github.com/PIC123/RockPaperScissors-Quest",
-            "startDate": "2021",
-            "technologies":[
-                {
-                    "class": "fa-unity",
-                    "name": "Unity"
-                },
-                {
-                    "class": "fa-vr-cardboard",
-                    "name": "VR"
-                }
-            ]
-        },
-        {
-            "id": "10",
-            "title": "Orion-MRTK",
-            "description": "An adaptation of Leap Motion's Orion tech demo for the Oculus Quest, using hand tracking and leveraging MRTK for menus and interactions",
-            "images": ["https://media.githubusercontent.com/media/PIC123/OrionQuest-MRTK/main/resources/Orion-MRTK.gif"],
-            "url": "https://github.com/PIC123/OrionQuest-MRTK",
-            "startDate": "2020",
-            "technologies":[
-                {
-                    "class": "devicon-unity-plain",
-                    "name": "Unity"
-                },
-                {
-                    "class": "devicon-vr-ar",
-                    "name": "VR"
-                }
-            ]
-        },
-        {
-            "id": "12",
-            "title": "VoTT",
-            "description": "Visual Object Tagging Tool is an open source annotation and labeling tool for images and videos. It allows users to quickly label their data and export it in a variety of for\u0002mats to facilitate training ma\u0002chine learning models",
-            "images": ["https://github.com/PIC123/react-portfolio-template/blob/master/src/images/vott.png?raw=true"],
-            "url": "https://github.com/microsoft/VoTT",
-            "startDate": "2019",
-            "technologies":[
-                {
-                    "class": "devicon-devicon-typescript-plain",
-                    "name": "Typescript"
-                },
-                {
-                    "class": "devicon-devicon-react-plain",
-                    "name": "React"
-                }
-            ]
-        },
-        {
-            "id": "11",
-            "title": "ARtBot",
-            "description": "An interactive virtual art gallery with holographic robot curator, developed for NY Creative Tech Week. The user can speak with the ARtBot, which uses speech-to-text and NLP, and ask questions about the art pieces or artists, or change the paintings on display",
-            "images": ["https://github.com/PIC123/react-portfolio-template/blob/master/src/images/artbot.png?raw=true"],
-            "startDate": "2018",
-            "technologies":[
-                {
-                    "class": "devicon-unity-plain",
-                    "name": "Unity"
-                },
-                {
-                    "class": "devicon-vr-ar",
-                    "name": "AR"
-                }
-            ]
-        },
-        {
-            "id": "13",
-            "title": "VR Haptics",
-            "description": "An IoT based armband to be worn while in VR that would simulate haptic feedback using electrical mus\u0002cle stimulation. The device was activated based on hand position, tracked using a leap motion on the front of an Oculus Rift, and could simulate tap\u0002ping, as well as recoil through muscle contraction",
-            "images": ["https://github.com/PIC123/react-portfolio-template/blob/master/src/images/vrHaptics.png?raw=true"],
-            "startDate": "2016",
-            "technologies":[
-                {
-                    "class": "devicon-unity-plain",
-                    "name": "Unity"
-                },
-                {
-                    "class": "devicon-vr-ar",
-                    "name": "VR"
-                },
-                {
-                    "class": "devicon-arduino-plain",
-                    "name": "Arduino"
-                }
-            ]
-        }
-    ],
-    "services": [
-        {
-            "id": "1",
-            "title": "Art Direction",
-            "description": "We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."
-        },
-        {
-            "id": "2",
-            "title": "Branding",
-            "description": "We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."
-        },
-        {
-            "id": "3",
-            "title": "Web Design",
-            "description": "We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."
-        },
-        {
-            "id": "4",
-            "title": "3D Design",
-            "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
-        }
-    ],
-    "skills": [
-        {
-            "id": "1",
-            "title": "C#",
-            "imgSrc": "/images/c-sharp.svg"
-        },
-        {
-            "id": "2",
-            "title": "Unity",
-            "imgSrc": "/images/unity.svg"
-        },
-        {
-            "id": "3",
-            "title": "Javascript/Typescript",
-            "imgSrc": "/images/javascript.svg"
-        },
-        {
-            "id": "4",
-            "title": "React",
-            "imgSrc": "/images/react.svg"
-        },
-        {
-            "id": "5",
-            "title": "Design",
-            "imgSrc": "/images/design.svg"
-        },
-        {
-            "id": "6",
-            "title": "Prototyping",
-            "imgSrc": "/images/code.svg"
-        },
-        {
-            "id": "7",
-            "title": "Python",
-            "imgSrc": "/images/python.svg"
-        },
-        {
-            "id": "8",
-            "title": "HTML",
-            "imgSrc": "/images/html.svg"
-        }
-    ],
-    "aboutParaOne": "I'm a highly motivated engineer with years of experience working in fast-paced, interdisciplinary environments. I have a very strong background in C#, Javascript/Typescript, Python and Unity. With experience creating applications for a range of AR/VR technologies, I'm passionate about building new technologies and experiences that inspire in order to develop the future of human/computer interaction.",
-    "aboutParaTwo": "I recently completed my Masters in AI at MIT and am doing research at the MIT Media Lab under Prof. Dava Newman, combining generative AI, mixed reality, and climate data. Previously I have worked at Microsoft on the Commercial Software Engineering team (CSE) where we collaborate with Microsoft’s top partners, ranging from start-ups to fortune 500 companies across many industries. We work alongside their lead engineers, developing solutions to solve the company’s toughest technical problems.",
-    "aboutParaThree": "Before that, I was doing research in the Fluid Interfaces group at the MIT MIT Media Lab and worked with the Robot Locomotion Group in MIT CSAIL while studying Electrical Engineering & Computer Science at MIT.",
-    "resume": {
-        "tagline": "👋  I'm a graduate research assistant, software engineer, designer, tinkerer",
-        "description": "Highly motivated engineer, researcher, presenter, and designer with extensive experience in fast-paced, interdisciplinary environments. Strong expertise in C#, JavaScript/TypeScript, Python, and Unity, with a proven track record of developing applications involving AI and spatial technologies. Passionate about creating innovative technologies and experiences that inspire and shape the future of human-computer interaction.",
-        "experiences": [
-            {
-                "id": "1",
-                "dates": "September 2022 - Present",
-                "type": "Full Time",
-                "position": "Graduate Research Assistant at the MIT Media Lab /MIT AeroAstro, Human Systems Lab",
-                "bullets": [
-                    "Working under Prof. Dava Newman, Director of the MIT Media Lab, building immersive data visualizations to create a virtual Earth Mission Control (EMC) for visualizing and analyzing climate data.",
-                    "Exploring new ways to display and interact with multi-modal data in a multi-user virtual environment.",
-                    "Additionally leveraging generative AI for novel applications to add increased immersion, more natural interactions, and increased presence."
-                ]
-            },
-            {
-                "id": "2",
-                "dates": "June 2020 - September 2022",
-                "type": "Full Time",
-                "position": "Program Manager II at Microsoft, Responsible AI Team",
-                "bullets": [
-                    "Building state-of-the-art responsible AI tools with Microsoft and academic researchers, and integrating those tools into Azure Machine Learning so customers can benefit from these tools in simple, repeatable, and high-quality workflows. Aiming to provide the most complete and widely adopted responsible AI tools that enable users to build responsible and trustworthy AI solutions."
-                ]
-            },
-            {
-                "id": "3",
-                "dates": "September 2017 - June 2022",
-                "type": "Full Time",
-                "position": "Software Dev I/Software Dev II at Microsoft, Commercial Software Engineering Team",
-                "bullets": [
-                    "Work with Microsoft's top partners, ranging from start-ups to fortune 500 companies across many industries, developing alongside their lead engineers to solve the company's toughest technical problems.",
-                    "Deploy production level code and contribute to open source communities",
-                    "Developed a Responsible AI workshop to teach relevant tools and principles and how they can be used on projects.",
-                    "Co-lead refactoring efforts on open source data labeling tool called the Visual Object Tagging Tool (VoTT) for machine learning which has been adopted by the community and teams within Microsoft. VoTT has over 3700 stars and 30k downloads on Github."
-                ]
-            }
-        ],
-        "education": [
-            {
-                "id": "1",
-                "universityName": "Massachusetts Institute of Technology",
-                "universityDate": "2022-2024",
-                "universityDegree": "Master of Engineering in Electrical Engineering and Computer Science",
-                "universityPara": "Concentration in Artificial Intelligence and Human-Computer Interaction"
-            },
-            {
-                "id": "2",
-                "universityName": "Massachusetts Institute of Technology",
-                "universityDate": "2013-2017",
-                "universityDegree": "S.B. Computer Science and Engineering,",
-                "universityPara": "Minor in Philosophy"
-            }
-        ],
-        "languages": [
-            "C#",
-            "Javascript",
-            "Typescript",
-            "Python",
-            "HTML5",
-            "Java"
-        ],
-        "frameworks": [
-            "Unity",
-            "React",
-            "NodeJs",
-            "Unreal Engine"
-        ],
-        "others": [
-            "Figma",
-            "Azure",
-            "Git",
-            "TouchDesigner",
-            "Fusion 360"
-        ],
-        "publications":[
-            {
-                "id": "http://zotero.org/users/10263964/items/9AZFF7E9",
-                "type": "thesis",
-                "abstract": "Data visualizations are incredibly powerful tools for engaging users with increasingly complex and unfamiliar information about the Earth’s changing climate, yet scientists often use only one tool or modality to communicate their ideas about climate data, such as two-dimensional figures and graphs. With the rise of commercially available virtual reality (VR), we can leverage the affordances of the immersive technology to help integrate multiple modalities into a cohesive experience. In this thesis, I will present the design and implementation of the Earth Mission Control (EMC), an immersive multi-user VR data visualization platform designed to enable scientists and educators to more effectively communicate their data-driven stories of climate impacts to policymakers and community members to help them deepen their understanding of their community and the climate impacts that they are facing. The EMC combines existing visualization modalities such as NASA’s Hyperwalls, spherical projections (e.g., NOAA’s Science on a Sphere), map tables, virtual environments, 360 video, and human scale immersive experiences into an engaging and highly interactive VR environment, leveraging each of the modalities’ unique strengths. The design and creation of an AI-powered virtual assistant is also described as a way to add increased immersion, more natural interactions, and increased presence. Initial testing of potential effectiveness of the platform in providing a deeper understanding of localized climate issues and available adaptation strategies and personal actions are also discussed.",
-                "genre": "Thesis",
-                "language": "en",
-                "license": "In Copyright - Educational Use Permitted",
-                "note": "Accepted: 2024-03-21T19:09:04Z",
-                "publisher": "Massachusetts Institute of Technology",
-                "source": "dspace.mit.edu",
-                "title": "Earth Mission Control: A Virtual Reality Platform for Bridging the Climate Science Communication Gap",
-                "title-short": "Earth Mission Control",
-                "URL": "https://dspace.mit.edu/handle/1721.1/153834",
-                "author": [
-                    {
-                        "family": "Cherner",
-                        "given": "Phillip"
-                    }
-                ],
-                "accessed": {
-                    "date-parts": [
-                        [
-                            "2024",
-                            10,
-                            6
-                        ]
-                    ]
-                },
-                "issued": {
-                    "date-parts": [
-                        [
-                            "2024",
-                            2
-                        ]
-                    ]
-                }
-            },
-            {
-                "id": "http://zotero.org/users/10263964/items/5KA698HA",
-                "type": "article-journal",
-                "abstract": "Data visualizations are incredibly powerful tools for engaging users with increasingly complex and unfamiliar information about the Earth's changing climate, yet scientists often use only one tool or modality to communicate their ideas about climate data, such as two-dimensional figures and graphs. With the rise of commercially available virtual reality (VR), we can leverage the affordances of the immersive technology to help integrate multiple modalities into a cohesive experience. In this presentation, I will share the design and implementation of the Earth Mission Control (EMC), an immersive multi-user VR data visualization platform designed to enable scientists and educators to more effectively communicate their data-driven stories of climate impacts to policymakers and community members to help them deepen their understanding of their community and the climate impacts that they are facing. The EMC combines existing visualization modalities such as NASA's Hyperwalls, spherical projections (like NOAA's Science on a Sphere), map tables, virtual environments, 360 video, and human scale immersive experiences into an engaging and highly interactive VR environment, leveraging each of the modalities' unique strengths. The design and creation of an AI-powered virtual assistant is also described as a way to add increased immersion, more natural interactions, and increased presence. Initial testing of potential effectiveness of the platform in providing a deeper understanding of localized climate issues and available adaptation strategies and personal actions is also discussed. https://agu.confex.com/data/abstract/agu/fm23/9/1/Paper_1428519_abstract_1269225_0.png",
-                "note": "event-title: AGU Fall Meeting Abstracts\nADS Bibcode: 2023AGUFMED34A..09C",
-                "page": "ED34A-09",
-                "source": "NASA ADS",
-                "title": "EMC: A Virtual Reality Platform for Bridging the Climate Science Communication Gap",
-                "title-short": "EMC",
-                "URL": "https://ui.adsabs.harvard.edu/abs/2023AGUFMED34A..09C",
-                "volume": "2023",
-                "author": [
-                    {
-                        "family": "Cherner",
-                        "given": "Phillip"
-                    },
-                    {
-                        "family": "Newman",
-                        "given": "Dava"
-                    },
-                    {
-                        "family": "Connolly",
-                        "given": "Rachel"
-                    }
-                ],
-                "accessed": {
-                    "date-parts": [
-                        [
-                            "2024",
-                            10,
-                            6
-                        ]
-                    ]
-                },
-                "issued": {
-                    "date-parts": [
-                        [
-                            "2023",
-                            12,
-                            1
-                        ]
-                    ]
-                }
-            }
-        ]
+  "name": "Phil",
+  "headerTaglineOne": "Building Digital Experiences And Products That Inspire",
+  "headerTaglineTwo": "Hey there! 👋 My name's Phil",
+  "headerTaglineThree": " I love building new technologies and experiences that inspire and shape the future of human-computer interaction.",
+  "headerTaglineFour": "Based in Cambridge, MA",
+  "showCursor": false,
+  "showBlog": false,
+  "darkMode": true,
+  "showResume": true,
+  "socials": [
+    {
+      "id": "1",
+      "title": "Github",
+      "img": "/images/github.png",
+      "link": "https://github.com/PIC123"
+    },
+    {
+      "id": "2",
+      "title": "LinkedIn",
+      "img": "/images/linkedin.png",
+      "link": "https://www.linkedin.com/in/pcherner/"
     }
+  ],
+  "projects": [
+    {
+      "id": "2",
+      "title": "Earth Mission Control",
+      "description": "An immersive, multi-user VR/AR data visualization platform, aimed at enabling climate scientists to more effectively communicate their data stories to policy makers to drive more informed policy decisions.",
+      "images": [
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/emc3.gif",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/svalbard-sample-crop.gif",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/emc2.jpg",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/emc.png"
+      ],
+      "url": "https://www.media.mit.edu/projects/earth-mission-control/overview/",
+      "startDate": "2024",
+      "technologies": [
+        {
+          "class": "devicon-csharp-plain",
+          "name": "C#"
+        },
+        {
+          "class": "fa-unity",
+          "name": "Unity"
+        },
+        {
+          "class": "devicon-vr-ar",
+          "name": "VR/AR"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "EarthBot",
+      "description": "A ChatGPT enabled bot to help navigate the experience and learn more about relevant concepts for just-in-time learning. Initially developed to enhance Earth Mission Control (EMC), the bot delivers a range of features including voice control, gaze tracking, question answering, translation support, and provides a more enjoyable experience through a personal exploration assistant.",
+      "images": [
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/earthbot.gif",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/earthbot2.png",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/earthbot3.png"
+      ],
+      "url": "https://docs.google.com/presentation/d/e/2PACX-1vTBnn_Doy7v0mNTh4NWbWeQDdHQ_Sdt7nJz4qanN8OdWPJmwfc2RfUFBXNsGiuVDsRlCjO2qIWMABRi/pub?start=false&loop=false&delayms=3000",
+      "startDate": "2024",
+      "technologies": [
+        {
+          "class": "devicon-csharp-plain",
+          "name": "C#"
+        },
+        {
+          "class": "devicon-unity-plain",
+          "name": "Unity"
+        },
+        {
+          "class": "fa-robot",
+          "name": "Generative AI"
+        },
+        {
+          "class": "devicon-azure-plain",
+          "name": "Azure"
+        },
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-vr-ar",
+          "name": "VR/AR"
+        }
+      ]
+    },
+    {
+      "id": "0",
+      "title": "Natural Harmony",
+      "description": "An interactive real-time generative Ai piece that seeks to reconnect a disassociated humanity to the planet we call home. Using Generative AI as a mirror, we see ourselves not as observers of nature, but as integral parts of its untouched beauty. We are transformed into mountains, rivers, and forests, inspiring a dialogue on living in harmony with nature. Presented at the Boston Museum of Science's Rise Up climate event and the MIT Sloan AI & ML Conference",
+      "startDate": "2024",
+      "images": [
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony5.gif",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony2.jpg",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony.jpg",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony3.jpg"
+      ],
+      "technologies": [
+        {
+          "class": "fa-computer-mouse",
+          "name": "TouchDesigner"
+        },
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-arduino-plain",
+          "name": "Arduino"
+        },
+        {
+          "class": "fa-robot",
+          "name": "Generative AI"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "title": "Portico Projection Mapping",
+      "description": "Sound reactive projection mapping of a mural. Portico Brewery's mural came alive through projection mapping, transforming the static art into a dynamic visual installation for a music event. The addition of animations like blinking eyes and moving figures created an immersive experience, blending the mural art and musical performance.",
+      "startDate": "2023",
+      "images": [
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/portico-mapping.gif",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/portico-mapping.jpg"
+      ],
+      "technologies": [
+        {
+          "class": "fa fa-cogs",
+          "name": "Projection Mapping"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "eMote",
+      "description": "An evidence-based web-application aimed at helping people learn to identify and describe their emotions better through AI-assisted self-reflection prompts and personalized AI-generated visual art.",
+      "images": [
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/eMote-cover.png",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/eMote3.png",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/eMote2.jpg"
+      ],
+      "url": "https://www.emoteai.art/",
+      "startDate": "2023",
+      "technologies": [
+        {
+          "class": "devicon-react-original",
+          "name": "React"
+        },
+        {
+          "class": "devicon-azure-plain",
+          "name": "Azure"
+        },
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "fa-robot",
+          "name": "Generative AI"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Tipping Points",
+      "description": "An immersive installation at the Museum of Science, using generative AI video and projection mapping. Tipping Points was built to convey the multitude of variables that support a healthy environment, and depict the consequences of removing too many factors. With AI-generated visuals projection-mapped onto the museum wall and a reimagined game of Jenga, Tipping Points is a multisensory experience that guides the audience through the potential collapse that awaits us if we don’t take action soon.",
+      "images": [
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/tipping-points.jpg"
+      ],
+      "url": "https://www.waveforms.media/nikuai",
+      "startDate": "2023",
+      "technologies": [
+        {
+          "class": "fa fa-cogs",
+          "name": "Projection Mapping"
+        },
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-devicon-csharp-plain",
+          "name": "Generative AI"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "DreamWeaver",
+      "description": "An AI powered illustrated storybook that allows users to create limitless stories, fostering imagination and creativity by offering a platform for unlimited narrative exploration. User's co-create infinite choose-your-own-adventure stories with the AI about any topic, in any setting they want.",
+      "images": [
+        "https://raw.githubusercontent.com/PIC123/DreamWeaver/main/src/background.png",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/dreamweaver.png"
+      ],
+      "url": "https://mango-flower-0aa90fa0f.3.azurestaticapps.net/",
+      "startDate": "2023",
+      "technologies": [
+        {
+          "class": "devicon-react-original",
+          "name": "React"
+        },
+        {
+          "class": "devicon-azure-plain",
+          "name": "Azure"
+        },
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "fa-robot",
+          "name": "Generative AI"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "DreamMachine",
+      "description": "An art installation that combined a rotary phone, a custom API, and generative AI to enable users to speak their dreams and receive a custom AI-generated dream interpretation.",
+      "images": [
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/dream-machine.png",
+        "https://pchernerportfoliosa.blob.core.windows.net/projects/dream-machine2.png"
+      ],
+      "url": "https://lively-smoke-004d17f10.2.azurestaticapps.net/",
+      "startDate": "2023",
+      "technologies": [
+        {
+          "class": "devicon-react-original",
+          "name": "React"
+        },
+        {
+          "class": "devicon-azure-plain",
+          "name": "Azure"
+        },
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "fa-robot",
+          "name": "Generative AI"
+        },
+        {
+          "class": "devicon-devicon-typescript-plain",
+          "name": "Twilio"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "FetchML",
+      "description": "This little guy is an AI that was trained with Reinforcement Learning using Unity's ML Agents platform. With just 15 minutes of training Bruce was able to learn to play fetch naturally with basic rewards for getting the ball and returning it.",
+      "images": [
+        "https://media.githubusercontent.com/media/PIC123/FetchML-Quest/main/resources/fetchMLdemo.gif"
+      ],
+      "url": "https://github.com/PIC123/FetchML-Quest",
+      "startDate": "2021",
+      "technologies": [
+        {
+          "class": "devicon-unity-plain",
+          "name": "Unity"
+        },
+        {
+          "class": "fa-robot",
+          "name": "Reinforcement Learning"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Rock Paper Scissors (RPS) VR",
+      "description": "This demo app combines the Oculus Quest's hand tracking with gesture recognition and MRTK-Quest to play Rock, Paper, Scissors.",
+      "images": [
+        "https://github.com/PIC123/RockPaperScissors-Quest/blob/main/resources/rockPaperScissorsDemo.gif?raw=true"
+      ],
+      "url": "https://github.com/PIC123/RockPaperScissors-Quest",
+      "startDate": "2021",
+      "technologies": [
+        {
+          "class": "fa-unity",
+          "name": "Unity"
+        },
+        {
+          "class": "fa-vr-cardboard",
+          "name": "VR"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Orion-MRTK",
+      "description": "An adaptation of Leap Motion's Orion tech demo for the Oculus Quest, using hand tracking and leveraging MRTK for menus and interactions",
+      "images": [
+        "https://media.githubusercontent.com/media/PIC123/OrionQuest-MRTK/main/resources/Orion-MRTK.gif"
+      ],
+      "url": "https://github.com/PIC123/OrionQuest-MRTK",
+      "startDate": "2020",
+      "technologies": [
+        {
+          "class": "devicon-unity-plain",
+          "name": "Unity"
+        },
+        {
+          "class": "devicon-vr-ar",
+          "name": "VR"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "VoTT",
+      "description": "Visual Object Tagging Tool is an open source annotation and labeling tool for images and videos. It allows users to quickly label their data and export it in a variety of for\u0002mats to facilitate training ma\u0002chine learning models",
+      "images": [
+        "https://github.com/PIC123/react-portfolio-template/blob/master/src/images/vott.png?raw=true"
+      ],
+      "url": "https://github.com/microsoft/VoTT",
+      "startDate": "2019",
+      "technologies": [
+        {
+          "class": "devicon-devicon-typescript-plain",
+          "name": "Typescript"
+        },
+        {
+          "class": "devicon-devicon-react-plain",
+          "name": "React"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "ARtBot",
+      "description": "An interactive virtual art gallery with holographic robot curator, developed for NY Creative Tech Week. The user can speak with the ARtBot, which uses speech-to-text and NLP, and ask questions about the art pieces or artists, or change the paintings on display",
+      "images": [
+        "https://github.com/PIC123/react-portfolio-template/blob/master/src/images/artbot.png?raw=true"
+      ],
+      "startDate": "2018",
+      "technologies": [
+        {
+          "class": "devicon-unity-plain",
+          "name": "Unity"
+        },
+        {
+          "class": "devicon-vr-ar",
+          "name": "AR"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "VR Haptics",
+      "description": "An IoT based armband to be worn while in VR that would simulate haptic feedback using electrical mus\u0002cle stimulation. The device was activated based on hand position, tracked using a leap motion on the front of an Oculus Rift, and could simulate tap\u0002ping, as well as recoil through muscle contraction",
+      "images": [
+        "https://github.com/PIC123/react-portfolio-template/blob/master/src/images/vrHaptics.png?raw=true"
+      ],
+      "startDate": "2016",
+      "technologies": [
+        {
+          "class": "devicon-unity-plain",
+          "name": "Unity"
+        },
+        {
+          "class": "devicon-vr-ar",
+          "name": "VR"
+        },
+        {
+          "class": "devicon-arduino-plain",
+          "name": "Arduino"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "title": "Art Direction",
+      "description": "We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."
+    },
+    {
+      "id": "2",
+      "title": "Branding",
+      "description": "We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."
+    },
+    {
+      "id": "3",
+      "title": "Web Design",
+      "description": "We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."
+    },
+    {
+      "id": "4",
+      "title": "3D Design",
+      "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
+    }
+  ],
+  "skills": [
+    {
+      "id": "1",
+      "title": "C#",
+      "imgSrc": "/images/c-sharp.svg"
+    },
+    {
+      "id": "2",
+      "title": "Unity",
+      "imgSrc": "/images/unity.svg"
+    },
+    {
+      "id": "3",
+      "title": "Javascript/Typescript",
+      "imgSrc": "/images/javascript.svg"
+    },
+    {
+      "id": "4",
+      "title": "React",
+      "imgSrc": "/images/react.svg"
+    },
+    {
+      "id": "5",
+      "title": "Design",
+      "imgSrc": "/images/design.svg"
+    },
+    {
+      "id": "6",
+      "title": "Prototyping",
+      "imgSrc": "/images/code.svg"
+    },
+    {
+      "id": "7",
+      "title": "Python",
+      "imgSrc": "/images/python.svg"
+    },
+    {
+      "id": "8",
+      "title": "HTML",
+      "imgSrc": "/images/html.svg"
+    }
+  ],
+  "aboutParaOne": "I'm a highly motivated engineer with years of experience working in fast-paced, interdisciplinary environments. I have a very strong background in C#, Javascript/Typescript, Python and Unity. With experience creating applications for a range of AR/VR technologies, I'm passionate about building new technologies and experiences that inspire in order to develop the future of human/computer interaction.",
+  "aboutParaTwo": "I recently completed my Masters in AI at MIT and am doing research at the MIT Media Lab under Prof. Dava Newman, combining generative AI, mixed reality, and climate data. Previously I have worked at Microsoft on the Commercial Software Engineering team (CSE) where we collaborate with Microsoft’s top partners, ranging from start-ups to fortune 500 companies across many industries. We work alongside their lead engineers, developing solutions to solve the company’s toughest technical problems.",
+  "aboutParaThree": "Before that, I was doing research in the Fluid Interfaces group at the MIT MIT Media Lab and worked with the Robot Locomotion Group in MIT CSAIL while studying Electrical Engineering & Computer Science at MIT.",
+  "resume": {
+    "tagline": "👋  I'm a graduate research assistant, software engineer, designer, tinkerer",
+    "description": "Highly motivated engineer, researcher, presenter, and designer with extensive experience in fast-paced, interdisciplinary environments. Strong expertise in C#, JavaScript/TypeScript, Python, and Unity, with a proven track record of developing applications involving AI and spatial technologies. Passionate about creating innovative technologies and experiences that inspire and shape the future of human-computer interaction.",
+    "experiences": [
+      {
+        "id": "1",
+        "dates": "September 2022 - Present",
+        "type": "Full Time",
+        "position": "Graduate Research Assistant at the MIT Media Lab /MIT AeroAstro, Human Systems Lab",
+        "bullets": [
+          "Working under Prof. Dava Newman, Director of the MIT Media Lab, building immersive data visualizations to create a virtual Earth Mission Control (EMC) for visualizing and analyzing climate data.",
+          "Exploring new ways to display and interact with multi-modal data in a multi-user virtual environment.",
+          "Additionally leveraging generative AI for novel applications to add increased immersion, more natural interactions, and increased presence."
+        ]
+      },
+      {
+        "id": "2",
+        "dates": "June 2020 - September 2022",
+        "type": "Full Time",
+        "position": "Program Manager II at Microsoft, Responsible AI Team",
+        "bullets": [
+          "Building state-of-the-art responsible AI tools with Microsoft and academic researchers, and integrating those tools into Azure Machine Learning so customers can benefit from these tools in simple, repeatable, and high-quality workflows. Aiming to provide the most complete and widely adopted responsible AI tools that enable users to build responsible and trustworthy AI solutions."
+        ]
+      },
+      {
+        "id": "3",
+        "dates": "September 2017 - June 2022",
+        "type": "Full Time",
+        "position": "Software Dev I/Software Dev II at Microsoft, Commercial Software Engineering Team",
+        "bullets": [
+          "Work with Microsoft's top partners, ranging from start-ups to fortune 500 companies across many industries, developing alongside their lead engineers to solve the company's toughest technical problems.",
+          "Deploy production level code and contribute to open source communities",
+          "Developed a Responsible AI workshop to teach relevant tools and principles and how they can be used on projects.",
+          "Co-lead refactoring efforts on open source data labeling tool called the Visual Object Tagging Tool (VoTT) for machine learning which has been adopted by the community and teams within Microsoft. VoTT has over 3700 stars and 30k downloads on Github."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": "1",
+        "universityName": "Massachusetts Institute of Technology",
+        "universityDate": "2022-2024",
+        "universityDegree": "Master of Engineering in Electrical Engineering and Computer Science",
+        "universityPara": "Concentration in Artificial Intelligence and Human-Computer Interaction"
+      },
+      {
+        "id": "2",
+        "universityName": "Massachusetts Institute of Technology",
+        "universityDate": "2013-2017",
+        "universityDegree": "S.B. Computer Science and Engineering,",
+        "universityPara": "Minor in Philosophy"
+      }
+    ],
+    "languages": ["C#", "Javascript", "Typescript", "Python", "HTML5", "Java"],
+    "frameworks": ["Unity", "React", "NodeJs", "Unreal Engine"],
+    "others": ["Figma", "Azure", "Git", "TouchDesigner", "Fusion 360"],
+    "publications": [
+      {
+        "id": "http://zotero.org/users/10263964/items/9AZFF7E9",
+        "type": "thesis",
+        "abstract": "Data visualizations are incredibly powerful tools for engaging users with increasingly complex and unfamiliar information about the Earth’s changing climate, yet scientists often use only one tool or modality to communicate their ideas about climate data, such as two-dimensional figures and graphs. With the rise of commercially available virtual reality (VR), we can leverage the affordances of the immersive technology to help integrate multiple modalities into a cohesive experience. In this thesis, I will present the design and implementation of the Earth Mission Control (EMC), an immersive multi-user VR data visualization platform designed to enable scientists and educators to more effectively communicate their data-driven stories of climate impacts to policymakers and community members to help them deepen their understanding of their community and the climate impacts that they are facing. The EMC combines existing visualization modalities such as NASA’s Hyperwalls, spherical projections (e.g., NOAA’s Science on a Sphere), map tables, virtual environments, 360 video, and human scale immersive experiences into an engaging and highly interactive VR environment, leveraging each of the modalities’ unique strengths. The design and creation of an AI-powered virtual assistant is also described as a way to add increased immersion, more natural interactions, and increased presence. Initial testing of potential effectiveness of the platform in providing a deeper understanding of localized climate issues and available adaptation strategies and personal actions are also discussed.",
+        "genre": "Thesis",
+        "language": "en",
+        "license": "In Copyright - Educational Use Permitted",
+        "note": "Accepted: 2024-03-21T19:09:04Z",
+        "publisher": "Massachusetts Institute of Technology",
+        "source": "dspace.mit.edu",
+        "title": "Earth Mission Control: A Virtual Reality Platform for Bridging the Climate Science Communication Gap",
+        "title-short": "Earth Mission Control",
+        "URL": "https://dspace.mit.edu/handle/1721.1/153834",
+        "author": [
+          {
+            "family": "Cherner",
+            "given": "Phillip"
+          }
+        ],
+        "accessed": {
+          "date-parts": [["2024", 10, 6]]
+        },
+        "issued": {
+          "date-parts": [["2024", 2]]
+        }
+      },
+      {
+        "id": "http://zotero.org/users/10263964/items/5KA698HA",
+        "type": "article-journal",
+        "abstract": "Data visualizations are incredibly powerful tools for engaging users with increasingly complex and unfamiliar information about the Earth's changing climate, yet scientists often use only one tool or modality to communicate their ideas about climate data, such as two-dimensional figures and graphs. With the rise of commercially available virtual reality (VR), we can leverage the affordances of the immersive technology to help integrate multiple modalities into a cohesive experience. In this presentation, I will share the design and implementation of the Earth Mission Control (EMC), an immersive multi-user VR data visualization platform designed to enable scientists and educators to more effectively communicate their data-driven stories of climate impacts to policymakers and community members to help them deepen their understanding of their community and the climate impacts that they are facing. The EMC combines existing visualization modalities such as NASA's Hyperwalls, spherical projections (like NOAA's Science on a Sphere), map tables, virtual environments, 360 video, and human scale immersive experiences into an engaging and highly interactive VR environment, leveraging each of the modalities' unique strengths. The design and creation of an AI-powered virtual assistant is also described as a way to add increased immersion, more natural interactions, and increased presence. Initial testing of potential effectiveness of the platform in providing a deeper understanding of localized climate issues and available adaptation strategies and personal actions is also discussed. https://agu.confex.com/data/abstract/agu/fm23/9/1/Paper_1428519_abstract_1269225_0.png",
+        "note": "event-title: AGU Fall Meeting Abstracts\nADS Bibcode: 2023AGUFMED34A..09C",
+        "page": "ED34A-09",
+        "source": "NASA ADS",
+        "title": "EMC: A Virtual Reality Platform for Bridging the Climate Science Communication Gap",
+        "title-short": "EMC",
+        "URL": "https://ui.adsabs.harvard.edu/abs/2023AGUFMED34A..09C",
+        "volume": "2023",
+        "author": [
+          {
+            "family": "Cherner",
+            "given": "Phillip"
+          },
+          {
+            "family": "Newman",
+            "given": "Dava"
+          },
+          {
+            "family": "Connolly",
+            "given": "Rachel"
+          }
+        ],
+        "accessed": {
+          "date-parts": [["2024", 10, 6]]
+        },
+        "issued": {
+          "date-parts": [["2023", 12, 1]]
+        }
+      }
+    ]
+  }
 }

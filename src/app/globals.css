@@ -54,3 +54,61 @@ html {
 @keyframes blink {
   50% { border-color: transparent }
 }
+.glitch {
+  position: relative;
+  color: inherit; /* uses the current text color */
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: -1;
+  color: inherit;
+  animation: none;
+}
+
+.group:hover .glitch::before {
+  color: #ff00c1;
+  animation: glitchTop 0.8s infinite linear alternate-reverse;
+}
+
+.group:hover .glitch::after {
+  color: #00fff9;
+  animation: glitchBottom 0.8s infinite linear alternate-reverse;
+}
+
+@keyframes glitchTop {
+  0% {
+    clip-path: inset(0 0 60% 0);
+    transform: translate(1px, -1px);
+  }
+  50% {
+    clip-path: inset(10% 0 40% 0);
+    transform: translate(-1px, 1px);
+  }
+  100% {
+    clip-path: inset(20% 0 20% 0);
+    transform: translate(1px, -1px);
+  }
+}
+
+@keyframes glitchBottom {
+  0% {
+    clip-path: inset(60% 0 0 0);
+    transform: translate(-1px, 1px);
+  }
+  50% {
+    clip-path: inset(40% 0 10% 0);
+    transform: translate(1px, -1px);
+  }
+  100% {
+    clip-path: inset(20% 0 20% 0);
+    transform: translate(-1px, 1px);
+  }
+}

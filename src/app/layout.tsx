@@ -1,26 +1,32 @@
 import "./globals.css";
 import Link from "next/link";
-import AsciiSparkles from "@/components/AsciiSparkles";
 
 export const metadata = {
   title: "Phil Cherner | Portfolio",
   description: "Creative Tech Portfolio",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const pathname = typeof window !== "undefined" ? window.location.pathname : "/";
-  const showRightPanel = pathname === "/" || pathname === "/about"; // Only show on homepage top & bottom
-
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className="bg-black text-white font-terminal">
         <nav className="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-black bg-opacity-80 border-b border-white z-50">
-          <Link href="/" className="text-2xl font-pixel text-white">PC</Link>
+          <Link href="/" className="text-2xl font-pixel text-white">
+            PC
+          </Link>
           <div className="flex space-x-6 text-sm font-pixel text-white">
-            {['projects', 'about', 'contact', 'resume', 'writeups'].map((link) => (
+            {[
+              { link: "Projects", href: "/#projects" },
+              { link: "About", href: "/#about" },
+              { link: "Contact", href: "/#contact" },
+            ].map(({ link, href }) => (
               <Link
                 key={link}
-                href={`/${link}`}
+                href={href}
                 className="relative group inline-block"
               >
                 <span className="inline-block pb-1">
@@ -32,19 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </nav>
 
-        <div className="pt-24 px-4 bg-black text-white font-terminal">
-          <div className={`mx-auto flex flex-col ${showRightPanel ? "lg:flex-row max-w-6xl" : ""}`}>
-            <div className={`w-full ${showRightPanel ? "lg:w-2/3 pr-4" : ""}`}>
-              {children}
-            </div>
-
-            {showRightPanel && (
-              <div className="hidden lg:block lg:w-1/3 pl-4 fixed right-0 top-0 h-full overflow-hidden pointer-events-none">
-                <AsciiSparkles />
-              </div>
-            )}
-          </div>
-        </div>
+        <main className="pt-24 px-4">{children}</main>
       </body>
     </html>
   );
