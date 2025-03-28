@@ -24,6 +24,48 @@
   ],
   "projects": [
     {
+      "id": "-2",
+      "title": "INTER Museum Space Experience",
+      "description": "An interactive installation at the INTER Museum in NYC where visitors don a virtual space suit tracked to their movements. After being scanned in the ship’s control center, players venture into open space to catch floating capsules—grabbing green-lit ones to collect suit parts while avoiding red-lit decoys—all before their oxygen runs out. Upon returning to the ship, they explore a 3D gallery of real and speculative space suits from past and future missions.",
+      "startDate": "2025",
+      "images": ["/images/INTER-suit-expereince-1.gif"],
+      "technologies": [
+        {
+          "class": "fa-computer-mouse",
+          "name": "TouchDesigner"
+        },
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-arduino-plain",
+          "name": "Kinect"
+        }
+      ]
+    },
+    {
+      "id": "-1",
+      "title": "AI Visuals for Jordan Rudess",
+      "description": "Jordan Rudess is a musician, composer, and producer who has worked with some of the most iconic bands in music history and is keyboardist for the band Dream Theater. I created a generative AI system that can create visuals for his music performance at MIT based on his pictures and music videos.",
+      "startDate": "2024",
+      "images": ["/images/jordan-AI-loop1.gif"],
+      "technologies": [
+        {
+          "class": "fa-computer-mouse",
+          "name": "TouchDesigner"
+        },
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "fa-robot",
+          "name": "Generative AI"
+        }
+      ]
+    },
+    {
       "id": "2",
       "title": "Earth Mission Control",
       "description": "An immersive, multi-user VR/AR data visualization platform, aimed at enabling climate scientists to more effectively communicate their data stories to policy makers to drive more informed policy decisions.",
