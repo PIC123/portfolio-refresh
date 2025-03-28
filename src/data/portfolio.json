@@ -49,7 +49,7 @@
       "title": "AI Visuals for Jordan Rudess",
       "description": "Jordan Rudess is a musician, composer, and producer who has worked with some of the most iconic bands in music history and is keyboardist for the band Dream Theater. I created a generative AI system that can create visuals for his music performance at MIT based on his pictures and music videos.",
       "startDate": "2024",
-      "images": ["/images/jordan-AI-loop1.gif"],
+      "images": ["/images/jordan-AI-loop1.gif", "/images/jordan-AI-2.gif"],
       "technologies": [
         {
           "class": "fa-computer-mouse",
