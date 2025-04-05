@@ -92,6 +92,22 @@ export default function ProjectModal({ project, onClose }: Props) {
             {project?.description}
           </p>
 
+          {project?.technologies && project.technologies.length > 0 && (
+            <div className="mb-6">
+              <h4 className="text-sm font-pixel mb-2">Technologies Used:</h4>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech.name}
+                    className="bg-gray-700 text-white text-xs font-terminal px-2 py-1 rounded"
+                  >
+                    {tech.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="flex flex-wrap gap-4">
             {project?.url && (
               <a

@@ -8,4 +8,10 @@ export interface Project {
   tools?: string[];
   year?: string;
   writeup?: string;
+  technologies?: Technology[];
+}
+
+export interface Technology {
+  class: string;
+  name: string;
 }
