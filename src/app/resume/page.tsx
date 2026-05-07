@@ -1,8 +1,213 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import portfolio from "@/data/portfolio.json";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Resume",
+  description: `Resume and experience for ${siteConfig.name} — engineer, researcher, and creative technologist at the MIT Media Lab.`,
+  alternates: { canonical: "/resume" },
+};
+
+type Experience = {
+  id: string;
+  dates: string;
+  type: string;
+  position: string;
+  bullets: string[];
+};
+
+type Education = {
+  id: string;
+  universityName: string;
+  universityDate: string;
+  universityDegree: string;
+  universityPara: string;
+};
+
+type Publication = {
+  id: string;
+  title: string;
+  URL?: string;
+  publisher?: string;
+  type?: string;
+  issued?: { "date-parts": (string | number)[][] };
+};
+
 export default function ResumePage() {
-    return (
-      <section className="py-24 px-8">
-        <h2 className="text-3xl font-pixel mb-8">Resume</h2>
-        <p className="text-lg">Download or view my full resume <a href="/resume.pdf" className="underline">here</a>.</p>
-      </section>
-    );
-  }
+  const { resume } = portfolio;
+  const experiences = resume.experiences as Experience[];
+  const education = resume.education as Education[];
+  const publications = resume.publications as Publication[];
+
+  return (
+    <article className="mx-auto w-full max-w-4xl px-4 py-16 sm:px-6 sm:py-20">
+      <header className="mb-12">
+        <p className="font-pixel text-xs text-accent mb-3">RESUME</p>
+        <h1 className="font-pixel text-3xl md:text-5xl mb-4">
+          {siteConfig.name}
+        </h1>
+        <p className="font-terminal text-lg text-white/85 mb-2">
+          {resume.tagline}
+        </p>
+        <p className="font-terminal text-sm text-white/60">
+          {siteConfig.location} ·{" "}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="underline underline-offset-2 hover:text-accent"
+          >
+            {siteConfig.email}
+          </a>{" "}
+          ·{" "}
+          <a
+            href={siteConfig.social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:text-accent"
+          >
+            GitHub
+          </a>{" "}
+          ·{" "}
+          <a
+            href={siteConfig.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:text-accent"
+          >
+            LinkedIn
+          </a>
+        </p>
+        <p className="mt-6 font-terminal leading-relaxed text-white/80">
+          {resume.description}
+        </p>
+      </header>
+
+      <Section title="Experience">
+        <ol className="space-y-8">
+          {experiences.map((exp) => (
+            <li key={exp.id}>
+              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                <h3 className="font-pixel text-sm md:text-base">
+                  {exp.position}
+                </h3>
+                <span className="font-terminal text-xs text-white/55">
+                  {exp.dates}
+                </span>
+              </div>
+              <p className="font-terminal text-xs text-white/55 mb-3">
+                {exp.type}
+              </p>
+              <ul className="ml-5 list-disc space-y-1.5 font-terminal text-sm text-white/80 marker:text-accent/60">
+                {exp.bullets.map((b, i) => (
+                  <li key={i}>{b}</li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      <Section title="Education">
+        <ol className="space-y-6">
+          {education.map((ed) => (
+            <li key={ed.id}>
+              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                <h3 className="font-pixel text-sm md:text-base">
+                  {ed.universityName}
+                </h3>
+                <span className="font-terminal text-xs text-white/55">
+                  {ed.universityDate}
+                </span>
+              </div>
+              <p className="font-terminal text-sm text-white/85">
+                {ed.universityDegree}
+              </p>
+              <p className="font-terminal text-sm text-white/60">
+                {ed.universityPara}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      <Section title="Skills">
+        <SkillBlock label="Languages" items={resume.languages} />
+        <SkillBlock label="Frameworks" items={resume.frameworks} />
+        <SkillBlock label="Tools" items={resume.others} />
+      </Section>
+
+      {publications.length > 0 && (
+        <Section title="Publications">
+          <ol className="space-y-4">
+            {publications.map((pub) => {
+              const year = pub.issued?.["date-parts"]?.[0]?.[0];
+              return (
+                <li key={pub.id}>
+                  <p className="font-pixel text-sm md:text-base mb-1">
+                    {pub.URL ? (
+                      <a
+                        href={pub.URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-accent underline underline-offset-2"
+                      >
+                        {pub.title} ↗
+                      </a>
+                    ) : (
+                      pub.title
+                    )}
+                  </p>
+                  <p className="font-terminal text-xs text-white/55">
+                    {[pub.publisher, year, pub.type].filter(Boolean).join(" · ")}
+                  </p>
+                </li>
+              );
+            })}
+          </ol>
+        </Section>
+      )}
+
+      <div className="mt-16">
+        <Link
+          href="/"
+          className="font-pixel text-xs text-white/60 hover:text-accent"
+        >
+          ← Back to portfolio
+        </Link>
+      </div>
+    </article>
+  );
+}
+
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="mb-12 border-t border-white/15 pt-8">
+      <h2 className="font-pixel text-xl md:text-2xl mb-6">{title}</h2>
+      {children}
+    </section>
+  );
+}
+
+function SkillBlock({ label, items }: { label: string; items: string[] }) {
+  return (
+    <div className="mb-4">
+      <p className="font-pixel text-xs text-white/55 mb-2">{label}</p>
+      <ul className="flex flex-wrap gap-2">
+        {items.map((s) => (
+          <li
+            key={s}
+            className="rounded bg-white/10 px-2.5 py-1 font-terminal text-xs text-white/85"
+          >
+            {s}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

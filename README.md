@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Phil Cherner — Portfolio
 
-## Getting Started
+Personal portfolio site for Phil Cherner: creative technologist, researcher, and storyteller working at the intersection of art, design, and AI.
 
-First, run the development server:
+## Stack
+
+- [Next.js 15](https://nextjs.org) (App Router) + React 19
+- TypeScript (strict)
+- Tailwind CSS 4
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- `next/font` for Press Start 2P + Share Tech Mono
+- Native Next.js metadata, sitemap, robots, and Open Graph image generation
+
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local   # set NEXT_PUBLIC_SITE_URL
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Script         | Purpose                  |
+| -------------- | ------------------------ |
+| `npm run dev`  | Dev server (Turbopack)   |
+| `npm run build`| Production build         |
+| `npm run start`| Run the production build |
+| `npm run lint` | ESLint                   |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                 App Router pages, layout, metadata, sitemap
+│   ├── opengraph-image  Generated 1200×630 OG image
+│   ├── resume/          Resume page rendered from data/portfolio.json
+│   └── writeups/        Writeups index (placeholder content)
+├── components/          UI components (Nav, ProjectsGallery, ProjectModal, …)
+├── data/portfolio.json  All project, resume, and bio content
+├── lib/site.ts          Site-wide metadata constants
+└── types/Project.ts     Shared TypeScript types
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Content lives in `src/data/portfolio.json` — edit there, no code changes needed for new projects.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Designed for Vercel. Set `NEXT_PUBLIC_SITE_URL` in the project's environment variables.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Large GIFs in `public/images/` (notably `INTER-suit-experience-1.gif`) should be converted to MP4/WebM and served via `<video autoplay muted loop playsinline>` to dramatically reduce bundle size. This is a follow-up — `ffmpeg` was not available in the environment when the audit was run.

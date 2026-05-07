@@ -4,9 +4,7 @@ export interface Project {
   description: string;
   url?: string;
   images?: string[];
-  tags?: string[];
-  tools?: string[];
-  year?: string;
+  startDate?: string;
   writeup?: string;
   technologies?: Technology[];
 }

@@ -1,114 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --accent: #00fff9;
+  --accent-alt: #ff00c1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  @apply bg-black text-white;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-accent: var(--accent);
+  --color-accent-alt: var(--accent-alt);
+  --font-pixel: var(--font-pixel);
+  --font-terminal: var(--font-terminal);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-terminal), "Share Tech Mono", ui-monospace, monospace;
+}
+
 .font-pixel {
-  font-family: 'Press Start 2P', monospace;
+  font-family: var(--font-pixel), "Press Start 2P", ui-monospace, monospace;
 }
 
 .font-terminal {
-  font-family: 'Share Tech Mono', monospace;
+  font-family: var(--font-terminal), "Share Tech Mono", ui-monospace, monospace;
 }
 
+/* Honor reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible focus ring for keyboard users */
+:where(a, button, [role="button"], input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip-to-content link, only visible when focused */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--background);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.5rem 0.75rem;
+  z-index: 100;
+  transition: top 150ms ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Typing animation — uses CSS variable so it scales with text length */
 .animate-typing {
-  animation: typing 2s steps(30, end), blink .75s step-end infinite;
-  white-space: nowrap;
-  overflow: hidden;
+  --typing-steps: 15;
+  --typing-duration: 1.4s;
   display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid currentColor;
+  width: 0;
+  animation:
+    typing var(--typing-duration) steps(var(--typing-steps), end) forwards,
+    blink 0.75s step-end 3;
+  animation-delay: 0.1s;
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink {
-  50% { border-color: transparent }
-}
-.glitch {
-  position: relative;
-  color: inherit; /* uses the current text color */
-}
-
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: -1;
-  color: inherit;
-  animation: none;
-}
-
-.group:hover .glitch::before {
-  color: #ff00c1;
-  animation: glitchTop 0.8s infinite linear alternate-reverse;
-}
-
-.group:hover .glitch::after {
-  color: #00fff9;
-  animation: glitchBottom 0.8s infinite linear alternate-reverse;
-}
-
-@keyframes glitchTop {
-  0% {
-    clip-path: inset(0 0 60% 0);
-    transform: translate(1px, -1px);
-  }
   50% {
-    clip-path: inset(10% 0 40% 0);
-    transform: translate(-1px, 1px);
+    border-color: transparent;
+  }
+}
+
+/* Floating sparkle animation for AsciiSparkles */
+@keyframes sparkle-float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
   }
   100% {
-    clip-path: inset(20% 0 20% 0);
-    transform: translate(1px, -1px);
-  }
-}
-
-@keyframes glitchBottom {
-  0% {
-    clip-path: inset(60% 0 0 0);
-    transform: translate(-1px, 1px);
-  }
-  50% {
-    clip-path: inset(40% 0 10% 0);
-    transform: translate(1px, -1px);
-  }
-  100% {
-    clip-path: inset(20% 0 20% 0);
-    transform: translate(-1px, 1px);
+    transform: translateY(-100px);
+    opacity: 0;
   }
 }

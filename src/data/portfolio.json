@@ -26,9 +26,11 @@
     {
       "id": "-2",
       "title": "INTER Museum Space Experience",
-      "description": "An interactive installation at the INTER Museum in NYC where visitors don a virtual space suit tracked to their movements. After being scanned in the ship’s control center, players venture into open space to catch floating capsules—grabbing green-lit ones to collect suit parts while avoiding red-lit decoys—all before their oxygen runs out. Upon returning to the ship, they explore a 3D gallery of real and speculative space suits from past and future missions.",
+      "description": "An interactive installation at the INTER Museum in NYC where visitors don a virtual space suit tracked to their movements. After being scanned in the ship's control center, players venture into open space to catch floating capsules—grabbing green-lit ones to collect suit parts while avoiding red-lit decoys—all before their oxygen runs out. Upon returning to the ship, they explore a 3D gallery of real and speculative space suits from past and future missions.",
       "startDate": "2025",
-      "images": ["/images/INTER-suit-expereince-1.gif"],
+      "images": [
+        "/images/INTER-suit-experience-1.gif"
+      ],
       "technologies": [
         {
           "class": "fa-computer-mouse",
@@ -49,7 +51,10 @@
       "title": "AI Visuals for Jordan Rudess",
       "description": "Jordan Rudess is a musician, composer, and producer who has worked with some of the most iconic bands in music history and is keyboardist for the band Dream Theater. I created a generative AI system that can create visuals for his music performance at MIT based on his pictures and music videos.",
       "startDate": "2024",
-      "images": ["/images/jordan-AI-loop1.gif", "/images/jordan-AI-2.gif"],
+      "images": [
+        "/images/jordan-AI-loop1.gif",
+        "/images/jordan-AI-2.gif"
+      ],
       "technologies": [
         {
           "class": "fa-computer-mouse",
@@ -209,7 +214,7 @@
     {
       "id": "5",
       "title": "Tipping Points",
-      "description": "An immersive installation at the Museum of Science, using generative AI video and projection mapping. Tipping Points was built to convey the multitude of variables that support a healthy environment, and depict the consequences of removing too many factors. With AI-generated visuals projection-mapped onto the museum wall and a reimagined game of Jenga, Tipping Points is a multisensory experience that guides the audience through the potential collapse that awaits us if we don’t take action soon.",
+      "description": "An immersive installation at the Museum of Science, using generative AI video and projection mapping. Tipping Points was built to convey the multitude of variables that support a healthy environment, and depict the consequences of removing too many factors. With AI-generated visuals projection-mapped onto the museum wall and a reimagined game of Jenga, Tipping Points is a multisensory experience that guides the audience through the potential collapse that awaits us if we don't take action soon.",
       "images": [
         "https://pchernerportfoliosa.blob.core.windows.net/projects/tipping-points.jpg"
       ],
@@ -225,7 +230,7 @@
           "name": "Python"
         },
         {
-          "class": "devicon-devicon-csharp-plain",
+          "class": "fa-robot",
           "name": "Generative AI"
         }
       ]
@@ -287,7 +292,7 @@
           "name": "Generative AI"
         },
         {
-          "class": "devicon-devicon-typescript-plain",
+          "class": "fa-phone",
           "name": "Twilio"
         }
       ]
@@ -355,7 +360,7 @@
     {
       "id": "12",
       "title": "VoTT",
-      "description": "Visual Object Tagging Tool is an open source annotation and labeling tool for images and videos. It allows users to quickly label their data and export it in a variety of for\u0002mats to facilitate training ma\u0002chine learning models",
+      "description": "Visual Object Tagging Tool is an open source annotation and labeling tool for images and videos. It allows users to quickly label their data and export it in a variety of formats to facilitate training machine learning models",
       "images": [
         "https://github.com/PIC123/react-portfolio-template/blob/master/src/images/vott.png?raw=true"
       ],
@@ -363,11 +368,11 @@
       "startDate": "2019",
       "technologies": [
         {
-          "class": "devicon-devicon-typescript-plain",
+          "class": "devicon-typescript-plain",
           "name": "Typescript"
         },
         {
-          "class": "devicon-devicon-react-plain",
+          "class": "devicon-react-original",
           "name": "React"
         }
       ]
@@ -394,7 +399,7 @@
     {
       "id": "13",
       "title": "VR Haptics",
-      "description": "An IoT based armband to be worn while in VR that would simulate haptic feedback using electrical mus\u0002cle stimulation. The device was activated based on hand position, tracked using a leap motion on the front of an Oculus Rift, and could simulate tap\u0002ping, as well as recoil through muscle contraction",
+      "description": "An IoT based armband to be worn while in VR that would simulate haptic feedback using electrical muscle stimulation. The device was activated based on hand position, tracked using a leap motion on the front of an Oculus Rift, and could simulate tapping, as well as recoil through muscle contraction",
       "images": [
         "https://github.com/PIC123/react-portfolio-template/blob/master/src/images/vrHaptics.png?raw=true"
       ],
@@ -480,8 +485,8 @@
     }
   ],
   "aboutParaOne": "I'm a highly motivated engineer with years of experience working in fast-paced, interdisciplinary environments. I have a very strong background in C#, Javascript/Typescript, Python and Unity. With experience creating applications for a range of AR/VR technologies, I'm passionate about building new technologies and experiences that inspire in order to develop the future of human/computer interaction.",
-  "aboutParaTwo": "I recently completed my Masters in AI at MIT and am doing research at the MIT Media Lab under Prof. Dava Newman, combining generative AI, mixed reality, and climate data. Previously I have worked at Microsoft on the Commercial Software Engineering team (CSE) where we collaborate with Microsoft’s top partners, ranging from start-ups to fortune 500 companies across many industries. We work alongside their lead engineers, developing solutions to solve the company’s toughest technical problems.",
-  "aboutParaThree": "Before that, I was doing research in the Fluid Interfaces group at the MIT MIT Media Lab and worked with the Robot Locomotion Group in MIT CSAIL while studying Electrical Engineering & Computer Science at MIT.",
+  "aboutParaTwo": "I recently completed my Masters in AI at MIT and am doing research at the MIT Media Lab under Prof. Dava Newman, combining generative AI, mixed reality, and climate data. Previously I have worked at Microsoft on the Commercial Software Engineering team (CSE) where we collaborate with Microsoft's top partners, ranging from start-ups to fortune 500 companies across many industries. We work alongside their lead engineers, developing solutions to solve the company's toughest technical problems.",
+  "aboutParaThree": "Before that, I was doing research in the Fluid Interfaces group at the MIT Media Lab and worked with the Robot Locomotion Group in MIT CSAIL while studying Electrical Engineering & Computer Science at MIT.",
   "resume": {
     "tagline": "👋  I'm a graduate research assistant, software engineer, designer, tinkerer",
     "description": "Highly motivated engineer, researcher, presenter, and designer with extensive experience in fast-paced, interdisciplinary environments. Strong expertise in C#, JavaScript/TypeScript, Python, and Unity, with a proven track record of developing applications involving AI and spatial technologies. Passionate about creating innovative technologies and experiences that inspire and shape the future of human-computer interaction.",
@@ -535,14 +540,32 @@
         "universityPara": "Minor in Philosophy"
       }
     ],
-    "languages": ["C#", "Javascript", "Typescript", "Python", "HTML5", "Java"],
-    "frameworks": ["Unity", "React", "NodeJs", "Unreal Engine"],
-    "others": ["Figma", "Azure", "Git", "TouchDesigner", "Fusion 360"],
+    "languages": [
+      "C#",
+      "Javascript",
+      "Typescript",
+      "Python",
+      "HTML5",
+      "Java"
+    ],
+    "frameworks": [
+      "Unity",
+      "React",
+      "NodeJs",
+      "Unreal Engine"
+    ],
+    "others": [
+      "Figma",
+      "Azure",
+      "Git",
+      "TouchDesigner",
+      "Fusion 360"
+    ],
     "publications": [
       {
         "id": "http://zotero.org/users/10263964/items/9AZFF7E9",
         "type": "thesis",
-        "abstract": "Data visualizations are incredibly powerful tools for engaging users with increasingly complex and unfamiliar information about the Earth’s changing climate, yet scientists often use only one tool or modality to communicate their ideas about climate data, such as two-dimensional figures and graphs. With the rise of commercially available virtual reality (VR), we can leverage the affordances of the immersive technology to help integrate multiple modalities into a cohesive experience. In this thesis, I will present the design and implementation of the Earth Mission Control (EMC), an immersive multi-user VR data visualization platform designed to enable scientists and educators to more effectively communicate their data-driven stories of climate impacts to policymakers and community members to help them deepen their understanding of their community and the climate impacts that they are facing. The EMC combines existing visualization modalities such as NASA’s Hyperwalls, spherical projections (e.g., NOAA’s Science on a Sphere), map tables, virtual environments, 360 video, and human scale immersive experiences into an engaging and highly interactive VR environment, leveraging each of the modalities’ unique strengths. The design and creation of an AI-powered virtual assistant is also described as a way to add increased immersion, more natural interactions, and increased presence. Initial testing of potential effectiveness of the platform in providing a deeper understanding of localized climate issues and available adaptation strategies and personal actions are also discussed.",
+        "abstract": "Data visualizations are incredibly powerful tools for engaging users with increasingly complex and unfamiliar information about the Earth's changing climate, yet scientists often use only one tool or modality to communicate their ideas about climate data, such as two-dimensional figures and graphs. With the rise of commercially available virtual reality (VR), we can leverage the affordances of the immersive technology to help integrate multiple modalities into a cohesive experience. In this thesis, I will present the design and implementation of the Earth Mission Control (EMC), an immersive multi-user VR data visualization platform designed to enable scientists and educators to more effectively communicate their data-driven stories of climate impacts to policymakers and community members to help them deepen their understanding of their community and the climate impacts that they are facing. The EMC combines existing visualization modalities such as NASA's Hyperwalls, spherical projections (e.g., NOAA's Science on a Sphere), map tables, virtual environments, 360 video, and human scale immersive experiences into an engaging and highly interactive VR environment, leveraging each of the modalities' unique strengths. The design and creation of an AI-powered virtual assistant is also described as a way to add increased immersion, more natural interactions, and increased presence. Initial testing of potential effectiveness of the platform in providing a deeper understanding of localized climate issues and available adaptation strategies and personal actions are also discussed.",
         "genre": "Thesis",
         "language": "en",
         "license": "In Copyright - Educational Use Permitted",
@@ -559,10 +582,21 @@
           }
         ],
         "accessed": {
-          "date-parts": [["2024", 10, 6]]
+          "date-parts": [
+            [
+              "2024",
+              10,
+              6
+            ]
+          ]
         },
         "issued": {
-          "date-parts": [["2024", 2]]
+          "date-parts": [
+            [
+              "2024",
+              2
+            ]
+          ]
         }
       },
       {
@@ -591,10 +625,22 @@
           }
         ],
         "accessed": {
-          "date-parts": [["2024", 10, 6]]
+          "date-parts": [
+            [
+              "2024",
+              10,
+              6
+            ]
+          ]
         },
         "issued": {
-          "date-parts": [["2023", 12, 1]]
+          "date-parts": [
+            [
+              "2023",
+              12,
+              1
+            ]
+          ]
         }
       }
     ]

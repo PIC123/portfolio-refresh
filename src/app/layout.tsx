@@ -1,9 +1,53 @@
 import "./globals.css";
-import Link from "next/link";
+import type { Metadata, Viewport } from "next";
+import { pixelFont, terminalFont } from "./fonts";
+import { siteConfig } from "@/lib/site";
+import Nav from "@/components/Nav";
 
-export const metadata = {
-  title: "Phil Cherner | Portfolio",
-  description: "Creative Tech Portfolio",
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: `%s — ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    creator: "@pcherner",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -11,34 +55,44 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body className="bg-black text-white font-terminal">
-        <nav className="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-black bg-opacity-80 border-b border-white z-50">
-          <Link href="/" className="text-2xl font-pixel text-white">
-            PC
-          </Link>
-          <div className="flex space-x-6 text-sm font-pixel text-white">
-            {[
-              { link: "Projects", href: "/#projects" },
-              { link: "About", href: "/#about" },
-              { link: "Contact", href: "/#contact" },
-            ].map(({ link, href }) => (
-              <Link
-                key={link}
-                href={href}
-                className="relative group inline-block"
-              >
-                <span className="inline-block pb-1">
-                  {link.charAt(0).toUpperCase() + link.slice(1)}
-                  <span className="absolute left-0 bottom-0 w-0 h-[2px] border-b border-dotted border-white group-hover:w-full transition-all duration-300"></span>
-                </span>
-              </Link>
-            ))}
-          </div>
-        </nav>
+  const personLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    email: `mailto:${siteConfig.email}`,
+    jobTitle: "Creative Technologist",
+    affiliation: {
+      "@type": "Organization",
+      name: "MIT Media Lab",
+      url: "https://www.media.mit.edu/",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Cambridge",
+      addressRegion: "MA",
+      addressCountry: "US",
+    },
+    sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
+  };
 
-        <main className="pt-24 px-4">{children}</main>
+  return (
+    <html
+      lang="en"
+      className={`${pixelFont.variable} ${terminalFont.variable}`}
+    >
+      <body className="bg-black text-white font-terminal antialiased">
+        <a href="#main" className="skip-link font-pixel text-xs">
+          Skip to content
+        </a>
+        <Nav />
+        <main id="main" className="pt-20 sm:pt-24">
+          {children}
+        </main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+        />
       </body>
     </html>
   );

@@ -2,11 +2,23 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: [
-      "pchernerportfoliosa.blob.core.windows.net",
-      "raw.githubusercontent.com",
-      "media.githubusercontent.com",
-      "github.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "pchernerportfoliosa.blob.core.windows.net",
+      },
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "media.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "github.com",
+      },
     ],
   },
 };
