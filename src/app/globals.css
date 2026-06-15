@@ -477,3 +477,97 @@ body {
   z-index: -1;
   pointer-events: none;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Skin-specific chrome offsets                                               */
+/* -------------------------------------------------------------------------- */
+
+/* Winamp title bar pushes everything down */
+[data-theme="winamp-classic"] nav[aria-label="Primary"] {
+  top: 26px;
+}
+[data-theme="winamp-classic"] main {
+  padding-top: calc(5rem + 26px);
+}
+
+/* Vapor marquee pushes everything down */
+[data-theme="vaporwave"] nav[aria-label="Primary"] {
+  top: 30px;
+}
+[data-theme="vaporwave"] main {
+  padding-top: calc(5rem + 30px);
+}
+
+/* Game Boy bezel reserves space at top and bottom (desktop only) */
+@media (min-width: 1024px) {
+  [data-theme="gameboy"] nav[aria-label="Primary"] {
+    top: 24px;
+  }
+  [data-theme="gameboy"] main {
+    padding-top: calc(5rem + 24px);
+    padding-bottom: 80px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Custom cursors per skin                                                    */
+/* -------------------------------------------------------------------------- */
+
+/* Block cursor for matrix mode on text inputs / buttons */
+[data-theme="matrix"] button,
+[data-theme="matrix"] a {
+  cursor:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='20' viewBox='0 0 16 20'><rect x='1' y='2' width='10' height='14' fill='%2300ff41' opacity='0.85'/></svg>")
+      4 4,
+    pointer;
+}
+
+/* Pointer with sparkles for vaporwave */
+[data-theme="vaporwave"] button,
+[data-theme="vaporwave"] a {
+  cursor:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><text x='0' y='18' font-size='18'>✨</text></svg>")
+      2 18,
+    pointer;
+}
+
+/* Crosshair-ish for winamp */
+[data-theme="winamp-classic"] button,
+[data-theme="winamp-classic"] a {
+  cursor:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><path d='M8 1v14M1 8h14' stroke='%2314ff5a' stroke-width='2'/></svg>")
+      8 8,
+    pointer;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Per-skin heading flair                                                     */
+/* -------------------------------------------------------------------------- */
+
+/* Matrix: glitch scramble on heading hover */
+@keyframes matrix-scramble {
+  0%, 100% { opacity: 1; transform: translateX(0); }
+  20% { opacity: 0.5; transform: translateX(-1px); }
+  40% { opacity: 0.9; transform: translateX(1px); }
+  60% { opacity: 0.7; transform: translateX(-1px); }
+  80% { opacity: 1; transform: translateX(1px); }
+}
+[data-theme="matrix"] h1:hover,
+[data-theme="matrix"] h2:hover,
+[data-theme="matrix"] h3:hover {
+  animation: matrix-scramble 0.45s steps(8, end);
+}
+
+/* Vaporwave: bob and tilt project cards */
+@keyframes vapor-card-bob {
+  0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+  50% { transform: translateY(-4px) rotate(0.5deg); }
+}
+[data-theme="vaporwave"] .skin-surface {
+  animation: vapor-card-bob 6s ease-in-out infinite;
+}
+[data-theme="vaporwave"] nav .skin-surface,
+[data-theme="vaporwave"] aside .skin-surface,
+[data-theme="vaporwave"] [role="dialog"].skin-surface {
+  animation: none;
+}

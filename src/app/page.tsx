@@ -3,7 +3,7 @@ import Link from "next/link";
 import portfolio from "@/data/portfolio.json";
 import { siteConfig } from "@/lib/site";
 import type { Project } from "@/types/Project";
-import AsciiSparkles from "@/components/AsciiSparkles";
+import HeroSidekick from "@/components/HeroSidekick";
 import IntroHeading from "@/components/IntroHeading";
 import ProjectsGallery from "@/components/ProjectsGallery";
 import SectionDivider from "@/components/SectionDivider";
@@ -41,11 +41,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div
-          aria-hidden="true"
-          className="pointer-events-none relative hidden w-full lg:block lg:w-1/3"
-        >
-          <AsciiSparkles />
+        <div className="relative hidden w-full lg:block lg:w-1/3">
+          <HeroSidekick />
         </div>
       </section>
 
