@@ -71,7 +71,6 @@ export default function ProjectModal({ project, onClose }: Props) {
     };
   }, [project, onClose, next, prev]);
 
-  // Touch swipe
   const touchStartX = useRef<number | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -91,7 +90,8 @@ export default function ProjectModal({ project, onClose }: Props) {
       {project && (
         <motion.div
           key="overlay"
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-[60] flex items-center justify-center backdrop-blur-sm p-4"
+          style={{ background: "rgba(0,0,0,0.8)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -104,7 +104,8 @@ export default function ProjectModal({ project, onClose }: Props) {
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-title"
-            className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-lg border border-white/40 bg-black p-6 text-white shadow-2xl"
+            className="skin-surface relative w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6"
+            style={{ background: "var(--background)" }}
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
@@ -116,7 +117,7 @@ export default function ProjectModal({ project, onClose }: Props) {
               type="button"
               onClick={onClose}
               aria-label="Close project details"
-              className="absolute top-3 right-3 inline-flex h-10 w-10 items-center justify-center rounded border border-white/30 text-xl hover:border-white hover:bg-white hover:text-black transition"
+              className="skin-button absolute top-3 right-3 inline-flex h-10 w-10 items-center justify-center text-xl"
             >
               ×
             </button>
@@ -128,14 +129,21 @@ export default function ProjectModal({ project, onClose }: Props) {
               {project.title}
             </h2>
             {project.startDate && (
-              <p className="mb-4 font-terminal text-xs text-white/60">
+              <p
+                className="mb-4 font-terminal text-xs"
+                style={{ color: "var(--muted)" }}
+              >
                 {project.startDate}
               </p>
             )}
 
             {project.images && project.images.length > 0 && (
               <div
-                className="relative w-full aspect-[16/9] overflow-hidden rounded mb-5 bg-black/60"
+                className="relative w-full aspect-[16/9] overflow-hidden mb-5"
+                style={{
+                  background: "rgba(0,0,0,0.4)",
+                  borderRadius: "var(--card-radius)",
+                }}
                 onTouchStart={onTouchStart}
                 onTouchEnd={onTouchEnd}
               >
@@ -154,7 +162,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                       type="button"
                       onClick={prev}
                       aria-label="Previous image"
-                      className="absolute left-2 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/60 font-pixel text-sm hover:bg-white hover:text-black transition"
+                      className="skin-button absolute left-2 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full font-pixel text-sm"
                     >
                       ‹
                     </button>
@@ -162,13 +170,17 @@ export default function ProjectModal({ project, onClose }: Props) {
                       type="button"
                       onClick={next}
                       aria-label="Next image"
-                      className="absolute right-2 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/60 font-pixel text-sm hover:bg-white hover:text-black transition"
+                      className="skin-button absolute right-2 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full font-pixel text-sm"
                     >
                       ›
                     </button>
                     <div
                       aria-hidden="true"
-                      className="absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full bg-black/70 px-2 py-0.5 font-terminal text-xs"
+                      className="absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full px-2 py-0.5 font-terminal text-xs"
+                      style={{
+                        background: "rgba(0,0,0,0.7)",
+                        color: "var(--foreground)",
+                      }}
                     >
                       {activeImageIndex + 1} / {project.images.length}
                     </div>
@@ -177,7 +189,10 @@ export default function ProjectModal({ project, onClose }: Props) {
               </div>
             )}
 
-            <p className="mb-6 font-terminal text-sm leading-relaxed text-white/85">
+            <p
+              className="mb-6 font-terminal text-sm leading-relaxed"
+              style={{ color: "var(--muted)" }}
+            >
               {project.description}
             </p>
 
@@ -188,7 +203,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   {project.technologies.map((t) => (
                     <li
                       key={t.name}
-                      className="rounded bg-white/10 px-2 py-1 font-terminal text-xs text-white/80"
+                      className="skin-chip px-2 py-1 font-terminal text-xs"
                     >
                       {t.name}
                     </li>
@@ -203,7 +218,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded border border-accent bg-accent/10 px-4 py-2 font-pixel text-xs text-accent hover:bg-accent hover:text-black transition"
+                  className="skin-button-primary px-4 py-2 font-pixel text-xs"
                 >
                   View Project ↗
                 </a>
@@ -213,7 +228,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   href={project.writeup}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded border border-white/40 px-4 py-2 font-pixel text-xs hover:border-white hover:bg-white hover:text-black transition"
+                  className="skin-button px-4 py-2 font-pixel text-xs"
                 >
                   Read Writeup ↗
                 </a>

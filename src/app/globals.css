@@ -1,10 +1,32 @@
 @import "tailwindcss";
 
-:root {
+/* -------------------------------------------------------------------------- */
+/* Default theme (terminal)                                                   */
+/* -------------------------------------------------------------------------- */
+
+:root,
+[data-theme="terminal"] {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --muted: rgba(255, 255, 255, 0.6);
+  --subtle: rgba(255, 255, 255, 0.4);
+  --surface: rgba(255, 255, 255, 0.02);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.2);
+  --border-strong: rgba(255, 255, 255, 0.4);
   --accent: #00fff9;
+  --accent-fg: #000000;
   --accent-alt: #ff00c1;
+  --nav-bg: rgba(0, 0, 0, 0.7);
+
+  --font-display: var(--font-pixel), "Press Start 2P", ui-monospace, monospace;
+  --font-body: var(--font-terminal), "Share Tech Mono", ui-monospace, monospace;
+
+  --card-radius: 4px;
+  --card-shadow: none;
+  --button-radius: 4px;
+
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -16,25 +38,223 @@
   --font-terminal: var(--font-terminal);
 }
 
+/* -------------------------------------------------------------------------- */
+/* Skin: Winamp Classic — gray bevel chrome + LCD green                       */
+/* -------------------------------------------------------------------------- */
+
+[data-theme="winamp-classic"] {
+  --background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
+  --foreground: #d8d8d8;
+  --muted: #a8a8a8;
+  --subtle: #888;
+  --surface: linear-gradient(180deg, #3a3a3a 0%, #2c2c2c 100%);
+  --surface-hover: linear-gradient(180deg, #4a4a4a 0%, #3a3a3a 100%);
+  --border: #5a5a5a;
+  --border-strong: #777;
+  --accent: #14ff5a;
+  --accent-fg: #00220c;
+  --accent-alt: #ffc640;
+  --nav-bg: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+
+  --font-display: var(--font-lcd), "VT323", ui-monospace, monospace;
+  --font-body: var(--font-lcd), "VT323", ui-monospace, monospace;
+
+  --card-radius: 2px;
+  --card-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.15),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.5);
+  --button-radius: 2px;
+}
+
+[data-theme="winamp-classic"] .font-pixel,
+[data-theme="winamp-classic"] .font-terminal {
+  font-family: var(--font-lcd), "VT323", ui-monospace, monospace;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="winamp-classic"] h1,
+[data-theme="winamp-classic"] h2,
+[data-theme="winamp-classic"] h3 {
+  font-size: 1.15em;
+  text-shadow: 0 0 8px rgba(20, 255, 90, 0.35);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Skin: Llama — warm browns + orange, cursive                                */
+/* -------------------------------------------------------------------------- */
+
+[data-theme="llama"] {
+  --background: radial-gradient(circle at 20% 0%, #6b3f1c 0%, #3a2410 100%);
+  --foreground: #ffe8b0;
+  --muted: #f0c87a;
+  --subtle: #c89859;
+  --surface: rgba(255, 232, 176, 0.06);
+  --surface-hover: rgba(255, 232, 176, 0.12);
+  --border: rgba(255, 200, 120, 0.4);
+  --border-strong: #ffb74a;
+  --accent: #ff8c1a;
+  --accent-fg: #2a1505;
+  --accent-alt: #ffd24a;
+  --nav-bg: linear-gradient(180deg, rgba(58, 36, 16, 0.95) 0%, rgba(58, 36, 16, 0.7) 100%);
+
+  --font-display: var(--font-script), "Pacifico", cursive;
+  --font-body: var(--font-terminal), "Share Tech Mono", ui-monospace, monospace;
+
+  --card-radius: 14px;
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --button-radius: 999px;
+}
+
+[data-theme="llama"] .font-pixel {
+  font-family: var(--font-script), "Pacifico", cursive;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+[data-theme="llama"] h1,
+[data-theme="llama"] h2 {
+  font-size: 1.4em;
+  line-height: 1.05;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Skin: Matrix — black + green rain                                          */
+/* -------------------------------------------------------------------------- */
+
+[data-theme="matrix"] {
+  --background: #000;
+  --foreground: #00ff41;
+  --muted: rgba(0, 255, 65, 0.72);
+  --subtle: rgba(0, 255, 65, 0.5);
+  --surface: rgba(0, 255, 65, 0.04);
+  --surface-hover: rgba(0, 255, 65, 0.09);
+  --border: rgba(0, 255, 65, 0.35);
+  --border-strong: rgba(0, 255, 65, 0.6);
+  --accent: #00ff41;
+  --accent-fg: #000;
+  --accent-alt: #00ffaa;
+  --nav-bg: rgba(0, 0, 0, 0.85);
+
+  --font-display: var(--font-terminal), "Share Tech Mono", ui-monospace, monospace;
+  --font-body: var(--font-terminal), "Share Tech Mono", ui-monospace, monospace;
+
+  --card-radius: 0;
+  --card-shadow: 0 0 12px rgba(0, 255, 65, 0.2);
+  --button-radius: 0;
+}
+
+[data-theme="matrix"] .font-pixel,
+[data-theme="matrix"] .font-terminal {
+  font-family: var(--font-terminal), "Share Tech Mono", ui-monospace, monospace;
+  text-shadow: 0 0 6px rgba(0, 255, 65, 0.5);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Skin: Vaporwave                                                            */
+/* -------------------------------------------------------------------------- */
+
+[data-theme="vaporwave"] {
+  --background: linear-gradient(180deg, #1a002a 0%, #5a0a73 35%, #ff6fb5 75%, #ffd5e6 100%);
+  --foreground: #ffffff;
+  --muted: rgba(255, 255, 255, 0.85);
+  --subtle: rgba(255, 255, 255, 0.65);
+  --surface: rgba(255, 255, 255, 0.08);
+  --surface-hover: rgba(255, 255, 255, 0.16);
+  --border: rgba(0, 255, 255, 0.55);
+  --border-strong: #00ffff;
+  --accent: #00ffff;
+  --accent-fg: #1a002a;
+  --accent-alt: #ff00aa;
+  --nav-bg: rgba(26, 0, 42, 0.65);
+
+  --font-display: var(--font-retro), "Audiowide", ui-sans-serif, sans-serif;
+  --font-body: var(--font-terminal), "Share Tech Mono", ui-monospace, monospace;
+
+  --card-radius: 10px;
+  --card-shadow:
+    0 0 22px rgba(0, 255, 255, 0.35),
+    0 0 38px rgba(255, 0, 170, 0.25);
+  --button-radius: 6px;
+}
+
+[data-theme="vaporwave"] .font-pixel {
+  font-family: var(--font-retro), "Audiowide", ui-sans-serif, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+[data-theme="vaporwave"] h1,
+[data-theme="vaporwave"] h2 {
+  text-shadow:
+    -2px 0 #ff00aa,
+    2px 0 #00ffff;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Skin: Game Boy                                                             */
+/* -------------------------------------------------------------------------- */
+
+[data-theme="gameboy"] {
+  --background: #8bac0f;
+  --foreground: #0f380f;
+  --muted: #1f5510;
+  --subtle: #306230;
+  --surface: #9bbc0f;
+  --surface-hover: #aacf2a;
+  --border: #0f380f;
+  --border-strong: #0f380f;
+  --accent: #0f380f;
+  --accent-fg: #aacf2a;
+  --accent-alt: #306230;
+  --nav-bg: #9bbc0f;
+
+  --font-display: var(--font-pixel), "Press Start 2P", ui-monospace, monospace;
+  --font-body: var(--font-pixel), "Press Start 2P", ui-monospace, monospace;
+
+  --card-radius: 0;
+  --card-shadow:
+    inset 0 0 0 2px #0f380f,
+    4px 4px 0 #0f380f;
+  --button-radius: 0;
+
+  color-scheme: light;
+}
+
+[data-theme="gameboy"] body {
+  font-size: 12px;
+}
+
+[data-theme="gameboy"] .font-pixel,
+[data-theme="gameboy"] .font-terminal {
+  font-family: var(--font-pixel), "Press Start 2P", ui-monospace, monospace;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Base                                                                       */
+/* -------------------------------------------------------------------------- */
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: var(--font-terminal), "Share Tech Mono", ui-monospace, monospace;
+  font-family: var(--font-body);
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
 }
 
 .font-pixel {
-  font-family: var(--font-pixel), "Press Start 2P", ui-monospace, monospace;
+  font-family: var(--font-display);
 }
 
 .font-terminal {
-  font-family: var(--font-terminal), "Share Tech Mono", ui-monospace, monospace;
+  font-family: var(--font-body);
 }
 
-/* Honor reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -46,14 +266,12 @@ body {
   }
 }
 
-/* Visible focus ring for keyboard users */
 :where(a, button, [role="button"], input, textarea, select, summary, [tabindex]):focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-/* Skip-to-content link, only visible when focused */
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -69,7 +287,7 @@ body {
   top: 1rem;
 }
 
-/* Typing animation — uses CSS variable so it scales with text length */
+/* Typing animation */
 .animate-typing {
   --typing-steps: 15;
   --typing-duration: 1.4s;
@@ -83,30 +301,179 @@ body {
     blink 0.75s step-end 3;
   animation-delay: 0.1s;
 }
-
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
-
 @keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+  50% { border-color: transparent; }
 }
 
-/* Floating sparkle animation for AsciiSparkles */
+/* Sparkle float */
 @keyframes sparkle-float {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100px); opacity: 0; }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Skin component primitives — surfaces, buttons, chrome                      */
+/* -------------------------------------------------------------------------- */
+
+.skin-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.skin-surface:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+}
+
+.skin-button {
+  border-radius: var(--button-radius);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--foreground);
+  transition: background-color 150ms ease, color 150ms ease, transform 150ms ease;
+}
+
+.skin-button:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.skin-button-primary {
+  border-radius: var(--button-radius);
+  border: 1px solid var(--accent);
+  background: color-mix(in oklab, var(--accent) 14%, transparent);
+  color: var(--accent);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.skin-button-primary:hover {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.skin-nav {
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.skin-chip {
+  background: color-mix(in oklab, var(--foreground) 12%, transparent);
+  color: var(--foreground);
+  border-radius: 4px;
+}
+
+.skin-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border-strong),
+    transparent
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Per-skin component tweaks                                                  */
+/* -------------------------------------------------------------------------- */
+
+/* Winamp: extra bevel + LCD glow on primary CTAs */
+[data-theme="winamp-classic"] .skin-button {
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.18),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.6);
+}
+[data-theme="winamp-classic"] .skin-button:active {
+  box-shadow:
+    inset -1px -1px 0 rgba(255, 255, 255, 0.18),
+    inset 1px 1px 0 rgba(0, 0, 0, 0.6);
+}
+[data-theme="winamp-classic"] .skin-button-primary {
+  text-shadow: 0 0 4px var(--accent);
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.18),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.6),
+    0 0 12px rgba(20, 255, 90, 0.3);
+}
+
+/* Game Boy: chunky 2px outlines everywhere */
+[data-theme="gameboy"] .skin-surface,
+[data-theme="gameboy"] .skin-button,
+[data-theme="gameboy"] .skin-button-primary {
+  border-width: 2px;
+}
+
+/* Game Boy: subtle screen scanlines via overlay */
+[data-theme="gameboy"] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(15, 56, 15, 0.08) 0,
+    rgba(15, 56, 15, 0.08) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+/* Vaporwave: neon glow on focused cards */
+[data-theme="vaporwave"] .skin-surface:hover {
+  box-shadow:
+    0 0 30px rgba(0, 255, 255, 0.6),
+    0 0 50px rgba(255, 0, 170, 0.3);
+}
+
+/* Matrix: monitor flicker on hero only */
+@keyframes matrix-flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.86; }
+  94% { opacity: 1; }
+}
+[data-theme="matrix"] main {
+  animation: matrix-flicker 8s infinite;
+}
+
+/* Llama: subtle warm vignette */
+[data-theme="llama"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 0;
+}
+
+/* Helper: render-once marquee for winamp */
+@keyframes skin-marquee {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+.skin-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: skin-marquee 18s linear infinite;
+}
+
+/* Helper: ascii rain canvas should sit behind content */
+.skin-bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
 }

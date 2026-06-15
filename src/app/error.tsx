@@ -16,24 +16,32 @@ export default function GlobalError({
 
   return (
     <section className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-start justify-center px-6 py-24">
-      <p className="font-pixel text-xs text-accent-alt mb-3">SYSTEM ERROR</p>
-      <h1 className="font-pixel text-3xl md:text-5xl mb-4">
+      <p
+        className="mb-3 font-pixel text-xs"
+        style={{ color: "var(--accent-alt)" }}
+      >
+        SYSTEM ERROR
+      </p>
+      <h1 className="mb-4 font-pixel text-3xl md:text-5xl">
         Something broke
       </h1>
-      <p className="font-terminal text-lg text-white/75 mb-8">
+      <p
+        className="mb-8 font-terminal text-lg"
+        style={{ color: "var(--muted)" }}
+      >
         An unexpected error occurred. You can try again, or head back home.
       </p>
       <div className="flex gap-3">
         <button
           type="button"
           onClick={reset}
-          className="rounded border border-accent bg-accent/10 px-4 py-2 font-pixel text-xs text-accent hover:bg-accent hover:text-black transition"
+          className="skin-button-primary px-4 py-2 font-pixel text-xs"
         >
           Try again
         </button>
         <Link
           href="/"
-          className="rounded border border-white/40 px-4 py-2 font-pixel text-xs hover:border-white hover:bg-white hover:text-black transition"
+          className="skin-button px-4 py-2 font-pixel text-xs"
         >
           ← Home
         </Link>

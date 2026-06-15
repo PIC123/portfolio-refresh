@@ -37,7 +37,10 @@ export default function ProjectsGallery({ projects }: Props) {
         <h2 id="projects-heading" className="font-pixel text-2xl md:text-3xl">
           Projects
         </h2>
-        <p className="text-xs text-white/60 font-terminal">
+        <p
+          className="font-terminal text-xs"
+          style={{ color: "var(--muted)" }}
+        >
           {visible.length} of {projects.length} shown
         </p>
       </div>
@@ -55,10 +58,8 @@ export default function ProjectsGallery({ projects }: Props) {
               type="button"
               onClick={() => setActiveFilter(f)}
               aria-pressed={isActive}
-              className={`px-3 py-1.5 font-pixel text-[10px] rounded border transition ${
-                isActive
-                  ? "border-accent bg-accent text-black"
-                  : "border-white/30 text-white/70 hover:border-white hover:text-white"
+              className={`px-3 py-1.5 font-pixel text-[10px] transition ${
+                isActive ? "skin-button-primary" : "skin-button"
               }`}
             >
               {f}
@@ -79,16 +80,22 @@ export default function ProjectsGallery({ projects }: Props) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3, delay: Math.min(index * 0.03, 0.3) }}
+              transition={{
+                duration: 0.3,
+                delay: Math.min(index * 0.03, 0.3),
+              }}
               className="list-none"
             >
               <button
                 type="button"
                 onClick={() => setSelectedProject(project)}
-                className="group flex h-full w-full flex-col rounded border border-white/30 bg-white/[0.02] p-4 text-left transition hover:border-accent hover:bg-white/[0.05] focus-visible:border-accent"
+                className="skin-surface group flex h-full w-full flex-col p-4 text-left transition"
                 aria-label={`View details for ${project.title}`}
               >
-                <div className="aspect-video w-full overflow-hidden rounded mb-4 bg-black">
+                <div
+                  className="aspect-video w-full overflow-hidden mb-4"
+                  style={{ background: "rgba(0,0,0,0.4)" }}
+                >
                   <Image
                     src={project.images?.[0] || FALLBACK_IMAGE}
                     alt=""
@@ -102,12 +109,18 @@ export default function ProjectsGallery({ projects }: Props) {
                 <h3 className="font-pixel text-base mb-2 leading-snug">
                   {project.title}
                   {project.startDate && (
-                    <span className="ml-2 text-xs text-white/50">
+                    <span
+                      className="ml-2 text-xs"
+                      style={{ color: "var(--subtle)" }}
+                    >
                       {project.startDate}
                     </span>
                   )}
                 </h3>
-                <p className="font-terminal text-sm leading-relaxed text-white/75 line-clamp-3">
+                <p
+                  className="font-terminal text-sm leading-relaxed line-clamp-3"
+                  style={{ color: "var(--muted)" }}
+                >
                   {project.description}
                 </p>
                 {project.technologies && project.technologies.length > 0 && (
@@ -115,13 +128,16 @@ export default function ProjectsGallery({ projects }: Props) {
                     {project.technologies.slice(0, 3).map((t) => (
                       <span
                         key={t.name}
-                        className="rounded bg-white/10 px-2 py-0.5 text-[10px] font-terminal text-white/70"
+                        className="skin-chip px-2 py-0.5 text-[10px] font-terminal"
                       >
                         {t.name}
                       </span>
                     ))}
                     {project.technologies.length > 3 && (
-                      <span className="text-[10px] font-terminal text-white/50">
+                      <span
+                        className="text-[10px] font-terminal"
+                        style={{ color: "var(--subtle)" }}
+                      >
                         +{project.technologies.length - 3}
                       </span>
                     )}

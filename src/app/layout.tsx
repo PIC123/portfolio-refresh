@@ -1,8 +1,16 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { pixelFont, terminalFont } from "./fonts";
+import {
+  pixelFont,
+  terminalFont,
+  lcdFont,
+  retroFont,
+  scriptFont,
+} from "./fonts";
 import { siteConfig } from "@/lib/site";
+import { SKIN_INIT_SCRIPT } from "@/lib/skin-init";
 import Nav from "@/components/Nav";
+import SkinFeatures from "@/components/skins/SkinFeatures";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -14,9 +22,7 @@ export const metadata: Metadata = {
   keywords: [...siteConfig.keywords],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: siteConfig.url,
@@ -34,14 +40,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
+    googleBot: { index: true, follow: true },
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  icons: { icon: "/favicon.ico" },
 };
 
 export const viewport: Viewport = {
@@ -76,19 +77,28 @@ export default function RootLayout({
     sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
   };
 
+  const fontVars = [
+    pixelFont.variable,
+    terminalFont.variable,
+    lcdFont.variable,
+    retroFont.variable,
+    scriptFont.variable,
+  ].join(" ");
+
   return (
-    <html
-      lang="en"
-      className={`${pixelFont.variable} ${terminalFont.variable}`}
-    >
-      <body className="bg-black text-white font-terminal antialiased">
+    <html lang="en" className={fontVars} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: SKIN_INIT_SCRIPT }} />
+      </head>
+      <body className="font-terminal antialiased">
         <a href="#main" className="skip-link font-pixel text-xs">
           Skip to content
         </a>
         <Nav />
-        <main id="main" className="pt-20 sm:pt-24">
+        <main id="main" className="relative pt-20 sm:pt-24 z-[1]">
           {children}
         </main>
+        <SkinFeatures />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}

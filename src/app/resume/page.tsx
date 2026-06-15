@@ -43,18 +43,30 @@ export default function ResumePage() {
   return (
     <article className="mx-auto w-full max-w-4xl px-4 py-16 sm:px-6 sm:py-20">
       <header className="mb-12">
-        <p className="font-pixel text-xs text-accent mb-3">RESUME</p>
+        <p
+          className="mb-3 font-pixel text-xs"
+          style={{ color: "var(--accent)" }}
+        >
+          RESUME
+        </p>
         <h1 className="font-pixel text-3xl md:text-5xl mb-4">
           {siteConfig.name}
         </h1>
-        <p className="font-terminal text-lg text-white/85 mb-2">
+        <p
+          className="mb-2 font-terminal text-lg"
+          style={{ color: "var(--muted)" }}
+        >
           {resume.tagline}
         </p>
-        <p className="font-terminal text-sm text-white/60">
+        <p
+          className="font-terminal text-sm"
+          style={{ color: "var(--subtle)" }}
+        >
           {siteConfig.location} ·{" "}
           <a
             href={`mailto:${siteConfig.email}`}
-            className="underline underline-offset-2 hover:text-accent"
+            className="underline underline-offset-2"
+            style={{ color: "var(--muted)" }}
           >
             {siteConfig.email}
           </a>{" "}
@@ -63,7 +75,8 @@ export default function ResumePage() {
             href={siteConfig.social.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-accent"
+            className="underline underline-offset-2"
+            style={{ color: "var(--muted)" }}
           >
             GitHub
           </a>{" "}
@@ -72,12 +85,16 @@ export default function ResumePage() {
             href={siteConfig.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-accent"
+            className="underline underline-offset-2"
+            style={{ color: "var(--muted)" }}
           >
             LinkedIn
           </a>
         </p>
-        <p className="mt-6 font-terminal leading-relaxed text-white/80">
+        <p
+          className="mt-6 font-terminal leading-relaxed"
+          style={{ color: "var(--foreground)" }}
+        >
           {resume.description}
         </p>
       </header>
@@ -86,18 +103,27 @@ export default function ResumePage() {
         <ol className="space-y-8">
           {experiences.map((exp) => (
             <li key={exp.id}>
-              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+              <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="font-pixel text-sm md:text-base">
                   {exp.position}
                 </h3>
-                <span className="font-terminal text-xs text-white/55">
+                <span
+                  className="font-terminal text-xs"
+                  style={{ color: "var(--subtle)" }}
+                >
                   {exp.dates}
                 </span>
               </div>
-              <p className="font-terminal text-xs text-white/55 mb-3">
+              <p
+                className="mb-3 font-terminal text-xs"
+                style={{ color: "var(--subtle)" }}
+              >
                 {exp.type}
               </p>
-              <ul className="ml-5 list-disc space-y-1.5 font-terminal text-sm text-white/80 marker:text-accent/60">
+              <ul
+                className="ml-5 list-disc space-y-1.5 font-terminal text-sm"
+                style={{ color: "var(--muted)" }}
+              >
                 {exp.bullets.map((b, i) => (
                   <li key={i}>{b}</li>
                 ))}
@@ -111,18 +137,22 @@ export default function ResumePage() {
         <ol className="space-y-6">
           {education.map((ed) => (
             <li key={ed.id}>
-              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+              <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="font-pixel text-sm md:text-base">
                   {ed.universityName}
                 </h3>
-                <span className="font-terminal text-xs text-white/55">
+                <span
+                  className="font-terminal text-xs"
+                  style={{ color: "var(--subtle)" }}
+                >
                   {ed.universityDate}
                 </span>
               </div>
-              <p className="font-terminal text-sm text-white/85">
-                {ed.universityDegree}
-              </p>
-              <p className="font-terminal text-sm text-white/60">
+              <p className="font-terminal text-sm">{ed.universityDegree}</p>
+              <p
+                className="font-terminal text-sm"
+                style={{ color: "var(--muted)" }}
+              >
                 {ed.universityPara}
               </p>
             </li>
@@ -143,13 +173,13 @@ export default function ResumePage() {
               const year = pub.issued?.["date-parts"]?.[0]?.[0];
               return (
                 <li key={pub.id}>
-                  <p className="font-pixel text-sm md:text-base mb-1">
+                  <p className="mb-1 font-pixel text-sm md:text-base">
                     {pub.URL ? (
                       <a
                         href={pub.URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-accent underline underline-offset-2"
+                        className="underline underline-offset-2"
                       >
                         {pub.title} ↗
                       </a>
@@ -157,7 +187,10 @@ export default function ResumePage() {
                       pub.title
                     )}
                   </p>
-                  <p className="font-terminal text-xs text-white/55">
+                  <p
+                    className="font-terminal text-xs"
+                    style={{ color: "var(--subtle)" }}
+                  >
                     {[pub.publisher, year, pub.type].filter(Boolean).join(" · ")}
                   </p>
                 </li>
@@ -170,7 +203,8 @@ export default function ResumePage() {
       <div className="mt-16">
         <Link
           href="/"
-          className="font-pixel text-xs text-white/60 hover:text-accent"
+          className="font-pixel text-xs"
+          style={{ color: "var(--muted)" }}
         >
           ← Back to portfolio
         </Link>
@@ -187,8 +221,11 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="mb-12 border-t border-white/15 pt-8">
-      <h2 className="font-pixel text-xl md:text-2xl mb-6">{title}</h2>
+    <section
+      className="mb-12 pt-8"
+      style={{ borderTop: "1px solid var(--border)" }}
+    >
+      <h2 className="mb-6 font-pixel text-xl md:text-2xl">{title}</h2>
       {children}
     </section>
   );
@@ -197,12 +234,17 @@ function Section({
 function SkillBlock({ label, items }: { label: string; items: string[] }) {
   return (
     <div className="mb-4">
-      <p className="font-pixel text-xs text-white/55 mb-2">{label}</p>
+      <p
+        className="mb-2 font-pixel text-xs"
+        style={{ color: "var(--subtle)" }}
+      >
+        {label}
+      </p>
       <ul className="flex flex-wrap gap-2">
         {items.map((s) => (
           <li
             key={s}
-            className="rounded bg-white/10 px-2.5 py-1 font-terminal text-xs text-white/85"
+            className="skin-chip px-2.5 py-1 font-terminal text-xs"
           >
             {s}
           </li>

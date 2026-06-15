@@ -15,20 +15,26 @@ export default function HomePage() {
     <>
       <section className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 pt-20 pb-12 sm:px-6 lg:flex-row lg:pt-32">
         <div className="w-full lg:w-2/3">
-          <IntroHeading name={portfolio.name} tagline={portfolio.headerTaglineThree.trim()} />
-          <p className="mt-4 text-sm text-white/60 font-pixel">
+          <IntroHeading
+            name={portfolio.name}
+            tagline={portfolio.headerTaglineThree.trim()}
+          />
+          <p
+            className="mt-4 font-pixel text-sm"
+            style={{ color: "var(--muted)" }}
+          >
             {portfolio.headerTaglineFour}
           </p>
           <div className="mt-8 flex flex-wrap gap-3 text-sm">
             <Link
               href="/#projects"
-              className="rounded border border-accent bg-accent/10 px-4 py-2 font-pixel text-xs text-accent transition hover:bg-accent hover:text-black"
+              className="skin-button-primary px-4 py-2 font-pixel text-xs"
             >
               View Projects
             </Link>
             <Link
               href="/#contact"
-              className="rounded border border-white/40 px-4 py-2 font-pixel text-xs transition hover:border-white hover:bg-white hover:text-black"
+              className="skin-button px-4 py-2 font-pixel text-xs"
             >
               Get in Touch
             </Link>
@@ -48,13 +54,19 @@ export default function HomePage() {
         className="mx-auto w-full max-w-4xl px-4 py-20 sm:px-6"
       >
         <h2 className="mb-6 font-pixel text-2xl md:text-3xl">What I Do</h2>
-        <p className="mb-4 text-lg leading-relaxed text-white/85">
+        <p
+          className="mb-4 text-lg leading-relaxed"
+          style={{ color: "var(--muted)" }}
+        >
           I build immersive, interactive experiences that bridge the digital
           and physical worlds — whether it&apos;s through XR, AI-driven art,
           or large-scale festival installations. My goal is to create joyful,
           thoughtful technology that connects people and inspires wonder.
         </p>
-        <p className="text-lg leading-relaxed text-white/85">
+        <p
+          className="text-lg leading-relaxed"
+          style={{ color: "var(--muted)" }}
+        >
           From AI-powered storytelling apps to VR data environments, my work
           explores how we interact with emerging tech — and how that tech can
           feel more human.
@@ -77,7 +89,10 @@ export default function HomePage() {
       >
         <h2 className="mb-8 font-pixel text-2xl md:text-3xl">About Me</h2>
         <div className="flex flex-col items-start gap-10 lg:flex-row">
-          <div className="flex-1 space-y-4 text-lg leading-relaxed text-white/85">
+          <div
+            className="flex-1 space-y-4 text-lg leading-relaxed"
+            style={{ color: "var(--muted)" }}
+          >
             <p>{portfolio.aboutParaOne}</p>
             <p>{portfolio.aboutParaTwo}</p>
             <p>{portfolio.aboutParaThree}</p>
@@ -88,7 +103,7 @@ export default function HomePage() {
               alt={`Portrait of ${portfolio.name} Cherner rendered as ASCII art`}
               width={480}
               height={480}
-              className="rounded border border-white/30 w-full h-auto object-cover"
+              className="skin-surface w-full h-auto object-cover"
               sizes="(max-width: 1024px) 80vw, 320px"
             />
           </div>
@@ -98,7 +113,10 @@ export default function HomePage() {
 
       <section className="mx-auto w-full max-w-4xl px-4 py-20 sm:px-6">
         <h2 className="mb-6 font-pixel text-2xl md:text-3xl">Current Focus</h2>
-        <p className="text-lg leading-relaxed text-white/85">
+        <p
+          className="text-lg leading-relaxed"
+          style={{ color: "var(--muted)" }}
+        >
           I&apos;m currently exploring the intersection of AI and creative
           expression — building systems that collaborate with humans to
           generate unexpected and meaningful outcomes. I&apos;m also fascinated
@@ -115,7 +133,10 @@ export default function HomePage() {
         <h2 className="mb-6 font-pixel text-2xl md:text-3xl">
           Let&apos;s Build Something
         </h2>
-        <p className="mb-8 text-lg leading-relaxed text-white/85">
+        <p
+          className="mb-8 text-lg leading-relaxed"
+          style={{ color: "var(--muted)" }}
+        >
           I&apos;m always excited to collaborate on new ideas — whether
           you&apos;re looking for a creative technologist, a research partner,
           or just someone to jam on weird and wonderful concepts with.
@@ -123,7 +144,7 @@ export default function HomePage() {
         <div className="flex flex-wrap gap-3 text-sm">
           <a
             href={`mailto:${siteConfig.email}`}
-            className="rounded border border-accent bg-accent/10 px-4 py-2 font-pixel text-xs text-accent transition hover:bg-accent hover:text-black"
+            className="skin-button-primary px-4 py-2 font-pixel text-xs"
           >
             Send Email
           </a>
@@ -131,7 +152,7 @@ export default function HomePage() {
             href={siteConfig.social.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded border border-white/40 px-4 py-2 font-pixel text-xs transition hover:border-white hover:bg-white hover:text-black"
+            className="skin-button px-4 py-2 font-pixel text-xs"
           >
             GitHub ↗
           </a>
@@ -139,7 +160,7 @@ export default function HomePage() {
             href={siteConfig.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded border border-white/40 px-4 py-2 font-pixel text-xs transition hover:border-white hover:bg-white hover:text-black"
+            className="skin-button px-4 py-2 font-pixel text-xs"
           >
             LinkedIn ↗
           </a>
