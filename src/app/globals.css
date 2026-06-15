@@ -489,6 +489,12 @@ body {
 [data-theme="winamp-classic"] main {
   padding-top: calc(5rem + 26px);
 }
+/* Leave room for the mobile Winamp dock at the bottom */
+@media (max-width: 639px) {
+  [data-theme="winamp-classic"] main {
+    padding-bottom: 92px;
+  }
+}
 
 /* Vapor marquee pushes everything down */
 [data-theme="vaporwave"] nav[aria-label="Primary"] {

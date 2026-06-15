@@ -1,5 +1,7 @@
 "use client";
 
+import portfolio from "@/data/portfolio.json";
+
 const COLS = 8;
 
 // Tiny pixel-art "PC" sprite as a grid of intensities (0-3).
@@ -17,6 +19,10 @@ const SPRITE: number[][] = [
 const SHADES = ["transparent", "#8bac0f", "#306230", "#0f380f"];
 
 export default function GameboyDpad() {
+  const projectCount = portfolio.projects?.length ?? 0;
+  const years = portfolio.resume?.experiences?.length
+    ? new Date().getFullYear() - 2016
+    : 0;
   return (
     <div
       aria-hidden="true"
@@ -57,8 +63,8 @@ export default function GameboyDpad() {
           fontSize: 8,
         }}
       >
-        <span>L:01</span>
-        <span>SCORE: 9999</span>
+        <span>LV {projectCount}</span>
+        <span>EXP {years}Y</span>
       </div>
     </div>
   );

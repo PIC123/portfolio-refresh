@@ -46,6 +46,43 @@ src/
 
 Content lives in `src/data/portfolio.json` — edit there, no code changes needed for new projects.
 
+## Skins (experimental)
+
+A skin switcher in the nav reskins the whole site between six themes
+(`terminal`, `winamp-classic`, `llama`, `matrix`, `vaporwave`, `gameboy`).
+Each is a CSS-variable block in `globals.css`; per-skin widgets live in
+`src/components/skins/` and are lazy-loaded so the default skin stays light.
+Choice persists in `localStorage` and is applied before paint by an inline
+script (no theme flash).
+
+### Winamp audio
+
+`winamp-classic` is a **real, working audio player**. It uses a small Web
+Audio engine (`src/lib/audio/engine.ts`) that synthesizes music live — so
+there are no audio files to ship and no licensing concerns. A real
+`AnalyserNode` drives the spectrum visualizer, and the 10-band graphic EQ is
+real (draggable biquad filters you can hear). The playlist tracks are named
+after Phil's projects. On mobile it collapses into a bottom dock.
+
+**To play real songs instead of (or alongside) the synth tracks**, drop a
+file in `public/audio/` or use a stream URL, then add a track in
+`src/lib/audio/tracks.ts`:
+
+```ts
+{
+  id: "my-track",
+  kind: "file",
+  title: "My Track",
+  subtitle: "2025",
+  src: "/audio/my-track.mp3", // or an https:// stream URL
+  lengthSec: 184,
+}
+```
+
+File tracks route through the same graph, so the visualizer and EQ work on
+them too. (Cross-origin streams need CORS headers for the analyser to read
+their data.)
+
 ## Deployment
 
 Designed for Vercel. Set `NEXT_PUBLIC_SITE_URL` in the project's environment variables.

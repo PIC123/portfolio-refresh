@@ -11,6 +11,7 @@ import { siteConfig } from "@/lib/site";
 import { SKIN_INIT_SCRIPT } from "@/lib/skin-init";
 import Nav from "@/components/Nav";
 import SkinFeatures from "@/components/skins/SkinFeatures";
+import { AudioProvider } from "@/components/skins/audio/AudioProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -94,11 +95,13 @@ export default function RootLayout({
         <a href="#main" className="skip-link font-pixel text-xs">
           Skip to content
         </a>
-        <Nav />
-        <main id="main" className="relative pt-20 sm:pt-24 z-[1]">
-          {children}
-        </main>
-        <SkinFeatures />
+        <AudioProvider>
+          <Nav />
+          <main id="main" className="relative pt-20 sm:pt-24 z-[1]">
+            {children}
+          </main>
+          <SkinFeatures />
+        </AudioProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}

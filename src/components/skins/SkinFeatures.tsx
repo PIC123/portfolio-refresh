@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { useSkin } from "./useSkin";
 
-// Lazy-load so default `terminal` skin pays for nothing.
+// Lazy-load so the default `terminal` skin pays for nothing.
 const MatrixRain = dynamic(() => import("./MatrixRain"), { ssr: false });
 const MatrixStats = dynamic(() => import("./MatrixStats"), { ssr: false });
 const WinampTransport = dynamic(() => import("./WinampTransport"), {
@@ -12,11 +12,13 @@ const WinampTransport = dynamic(() => import("./WinampTransport"), {
 const WinampTitlebar = dynamic(() => import("./WinampTitlebar"), {
   ssr: false,
 });
-const WinampEqualizer = dynamic(() => import("./WinampEqualizer"), {
+const WinampPlaylist = dynamic(() => import("./WinampPlaylist"), {
   ssr: false,
 });
+const WinampDock = dynamic(() => import("./WinampDock"), { ssr: false });
 const VaporMarquee = dynamic(() => import("./VaporMarquee"), { ssr: false });
 const VaporClock = dynamic(() => import("./VaporClock"), { ssr: false });
+const VaporCounter = dynamic(() => import("./VaporCounter"), { ssr: false });
 const VaporFloaters = dynamic(() => import("./VaporFloaters"), { ssr: false });
 const GameboyBezel = dynamic(() => import("./GameboyBezel"), { ssr: false });
 const GameboyBattery = dynamic(() => import("./GameboyBattery"), {
@@ -38,8 +40,9 @@ export default function SkinFeatures() {
       {skin === "winamp-classic" && (
         <>
           <WinampTitlebar />
-          <WinampEqualizer />
+          <WinampPlaylist />
           <WinampTransport />
+          <WinampDock />
         </>
       )}
 
@@ -54,6 +57,7 @@ export default function SkinFeatures() {
         <>
           <VaporMarquee />
           <VaporClock />
+          <VaporCounter />
           <VaporFloaters />
         </>
       )}
