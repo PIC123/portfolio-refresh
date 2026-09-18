@@ -7,6 +7,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        // Reachable by direct URL (and by Google's OAuth reviewers, who are
+        // not crawlers), but kept out of search indexes.
+        disallow: ["/oauth"],
       },
     ],
     sitemap: `${siteConfig.url}/sitemap.xml`,

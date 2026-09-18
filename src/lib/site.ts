@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "Phil Cherner — Creative Technologist",
   description:
     "Creative technologist, researcher, and storyteller working at the intersection of art, design, and AI. MIT Media Lab.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://philcherner.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://cherner.dev",
   email: "pcherner@mit.edu",
   location: "Cambridge, MA",
   social: {
