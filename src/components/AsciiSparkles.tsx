@@ -25,6 +25,18 @@ type Sparkle = {
   char: string;
 };
 
+/**
+ * Each sparkle is two nested elements on purpose:
+ *
+ *   wrapper  — scroll parallax + pointer glow (plain inline styles)
+ *   glyph    — the looping float animation
+ *
+ * They have to be separate. A running CSS animation sits in a higher cascade
+ * origin than inline styles, so when the float animation drove `transform`
+ * and `opacity` on the same node, the parallax and glow written from JS were
+ * silently discarded once the animation started. Splitting them lets the two
+ * transforms compose (and opacity multiply) instead of fighting.
+ */
 export default function AsciiSparkles() {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -41,44 +53,59 @@ export default function AsciiSparkles() {
   }, []);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (reduceMotion) return;
-
     const container = containerRef.current;
     if (!container) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // The hero column is `hidden` below lg, so there is nothing to animate.
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    if (!desktop.matches) return;
+
+    const wrappers = Array.from(
+      container.querySelectorAll<HTMLElement>("[data-sparkle]"),
+    );
+    if (wrappers.length === 0) return;
 
     let rafId = 0;
+    let onScreen = true;
+    let bounds: DOMRect | null = null;
     let pendingMouse: { x: number; y: number } | null = null;
     let pendingScroll = false;
 
-    const layers = Array.from(
-      container.querySelectorAll<HTMLElement>(".sparkle-layer"),
-    );
+    // One rect read for the whole field instead of one per sparkle. Sparkle
+    // centres are derived from their percentage offsets, so 40 forced layouts
+    // per frame become a single cached measurement.
+    const measure = () => {
+      bounds = container.getBoundingClientRect();
+    };
+    measure();
 
     const apply = () => {
       rafId = 0;
+      if (!onScreen) return;
+      if (!bounds) measure();
+      if (!bounds) return;
+
       if (pendingScroll) {
         const scrollY = window.scrollY;
-        layers.forEach((layer, index) => {
-          const depth = (index + 1) * 5;
-          layer.style.setProperty("--scroll-y", `${scrollY / depth}px`);
+        wrappers.forEach((w, i) => {
+          const depth = ((i % 5) + 1) * 6;
+          w.style.setProperty("--parallax-y", `${scrollY / depth}px`);
         });
         pendingScroll = false;
       }
+
       if (pendingMouse) {
         const { x, y } = pendingMouse;
-        layers.forEach((layer) => {
-          const rect = layer.getBoundingClientRect();
-          const lx = rect.left + rect.width / 2;
-          const ly = rect.top + rect.height / 2;
-          const dist = Math.hypot(lx - x, ly - y);
-          const glow = Math.max(0, 1 - dist / GLOW_RADIUS);
-          layer.style.textShadow = `0 0 ${glow * 60}px white`;
-          layer.style.opacity = `${0.5 + glow * 0.5}`;
-        });
+        for (let i = 0; i < wrappers.length; i++) {
+          const s = sparkles[i];
+          const cx = bounds.left + (s.left / 100) * bounds.width;
+          const cy = bounds.top + (s.top / 100) * bounds.height;
+          const glow = Math.max(0, 1 - Math.hypot(cx - x, cy - y) / GLOW_RADIUS);
+          const w = wrappers[i];
+          w.style.setProperty("--glow-blur", `${glow * 60}px`);
+          w.style.setProperty("--glow-opacity", `${0.5 + glow * 0.5}`);
+        }
         pendingMouse = null;
       }
     };
@@ -88,23 +115,44 @@ export default function AsciiSparkles() {
     };
 
     const onScroll = () => {
+      bounds = null; // position changed; re-measure next frame
       pendingScroll = true;
       schedule();
     };
     const onMouseMove = (e: MouseEvent) => {
+      if (!onScreen) return;
       pendingMouse = { x: e.clientX, y: e.clientY };
       schedule();
     };
+    const onResize = () => {
+      bounds = null;
+      schedule();
+    };
+
+    // Stop doing any work while the hero is scrolled out of view.
+    let io: IntersectionObserver | undefined;
+    if (typeof IntersectionObserver !== "undefined") {
+      io = new IntersectionObserver(
+        ([entry]) => {
+          onScreen = entry.isIntersecting;
+        },
+        { rootMargin: "100px" },
+      );
+      io.observe(container);
+    }
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", onMouseMove, { passive: true });
+    window.addEventListener("resize", onResize, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", onResize);
+      io?.disconnect();
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [sparkles]);
 
   return (
     <div
@@ -115,17 +163,25 @@ export default function AsciiSparkles() {
       {sparkles.map((s) => (
         <span
           key={s.id}
-          className="sparkle-layer absolute select-none text-2xl text-white"
+          data-sparkle
+          className="absolute select-none"
           style={{
             left: `${s.left}%`,
             top: `${s.top}%`,
-            opacity: 0.7,
-            textShadow: "0 0 30px white",
-            animation: `sparkle-float ${s.duration}s linear ${s.delay}s infinite`,
-            transform: "translateY(var(--scroll-y, 0))",
+            opacity: "var(--glow-opacity, 0.7)",
+            textShadow: "0 0 var(--glow-blur, 30px) white",
+            transform: "translateY(var(--parallax-y, 0px))",
+            willChange: "transform",
           }}
         >
-          {s.char}
+          <span
+            className="block text-2xl text-white"
+            style={{
+              animation: `sparkle-float ${s.duration}s linear ${s.delay}s infinite`,
+            }}
+          >
+            {s.char}
+          </span>
         </span>
       ))}
     </div>

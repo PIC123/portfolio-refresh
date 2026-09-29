@@ -29,7 +29,14 @@
       "description": "An interactive installation at the INTER Museum in NYC where visitors don a virtual space suit tracked to their movements. After being scanned in the ship's control center, players venture into open space to catch floating capsules—grabbing green-lit ones to collect suit parts while avoiding red-lit decoys—all before their oxygen runs out. Upon returning to the ship, they explore a 3D gallery of real and speculative space suits from past and future missions.",
       "startDate": "2025",
       "images": [
-        "/images/INTER-suit-experience-1.gif"
+        {
+          "kind": "video",
+          "src": "/media/INTER-suit-experience-1.mp4",
+          "poster": "/media/INTER-suit-experience-1-poster.jpg",
+          "width": 800,
+          "height": 1422,
+          "webm": "/media/INTER-suit-experience-1.webm"
+        }
       ],
       "technologies": [
         {
@@ -52,8 +59,22 @@
       "description": "Jordan Rudess is a musician, composer, and producer who has worked with some of the most iconic bands in music history and is keyboardist for the band Dream Theater. I created a generative AI system that can create visuals for his music performance at MIT based on his pictures and music videos.",
       "startDate": "2024",
       "images": [
-        "/images/jordan-AI-loop1.gif",
-        "/images/jordan-AI-2.gif"
+        {
+          "kind": "video",
+          "src": "/media/jordan-AI-loop1.mp4",
+          "poster": "/media/jordan-AI-loop1-poster.jpg",
+          "width": 480,
+          "height": 270,
+          "webm": "/media/jordan-AI-loop1.webm"
+        },
+        {
+          "kind": "video",
+          "src": "/media/jordan-AI-2.mp4",
+          "poster": "/media/jordan-AI-2-poster.jpg",
+          "width": 480,
+          "height": 270,
+          "webm": "/media/jordan-AI-2.webm"
+        }
       ],
       "technologies": [
         {
@@ -75,8 +96,22 @@
       "title": "Earth Mission Control",
       "description": "An immersive, multi-user VR/AR data visualization platform, aimed at enabling climate scientists to more effectively communicate their data stories to policy makers to drive more informed policy decisions.",
       "images": [
-        "https://pchernerportfoliosa.blob.core.windows.net/projects/emc3.gif",
-        "https://pchernerportfoliosa.blob.core.windows.net/projects/svalbard-sample-crop.gif",
+        {
+          "kind": "video",
+          "src": "/media/emc3.mp4",
+          "webm": "/media/emc3.webm",
+          "poster": "/media/emc3-poster.jpg",
+          "width": 486,
+          "height": 486
+        },
+        {
+          "kind": "video",
+          "src": "/media/svalbard-sample-crop.mp4",
+          "webm": "/media/svalbard-sample-crop.webm",
+          "poster": "/media/svalbard-sample-crop-poster.jpg",
+          "width": 494,
+          "height": 278
+        },
         "https://pchernerportfoliosa.blob.core.windows.net/projects/emc2.jpg",
         "https://pchernerportfoliosa.blob.core.windows.net/projects/emc.png"
       ],
@@ -102,7 +137,14 @@
       "title": "EarthBot",
       "description": "A ChatGPT enabled bot to help navigate the experience and learn more about relevant concepts for just-in-time learning. Initially developed to enhance Earth Mission Control (EMC), the bot delivers a range of features including voice control, gaze tracking, question answering, translation support, and provides a more enjoyable experience through a personal exploration assistant.",
       "images": [
-        "https://pchernerportfoliosa.blob.core.windows.net/projects/earthbot.gif",
+        {
+          "kind": "video",
+          "src": "/media/earthbot.mp4",
+          "webm": "/media/earthbot.webm",
+          "poster": "/media/earthbot-poster.jpg",
+          "width": 480,
+          "height": 480
+        },
         "https://pchernerportfoliosa.blob.core.windows.net/projects/earthbot2.png",
         "https://pchernerportfoliosa.blob.core.windows.net/projects/earthbot3.png"
       ],
@@ -141,7 +183,14 @@
       "description": "An interactive real-time generative Ai piece that seeks to reconnect a disassociated humanity to the planet we call home. Using Generative AI as a mirror, we see ourselves not as observers of nature, but as integral parts of its untouched beauty. We are transformed into mountains, rivers, and forests, inspiring a dialogue on living in harmony with nature. Presented at the Boston Museum of Science's Rise Up climate event and the MIT Sloan AI & ML Conference",
       "startDate": "2024",
       "images": [
-        "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony5.gif",
+        {
+          "kind": "video",
+          "src": "/media/natural-harmony5.mp4",
+          "webm": "/media/natural-harmony5.webm",
+          "poster": "/media/natural-harmony5-poster.jpg",
+          "width": 854,
+          "height": 480
+        },
         "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony2.jpg",
         "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony.jpg",
         "https://pchernerportfoliosa.blob.core.windows.net/projects/natural-harmony3.jpg"
@@ -171,7 +220,14 @@
       "description": "Sound reactive projection mapping of a mural. Portico Brewery's mural came alive through projection mapping, transforming the static art into a dynamic visual installation for a music event. The addition of animations like blinking eyes and moving figures created an immersive experience, blending the mural art and musical performance.",
       "startDate": "2023",
       "images": [
-        "https://pchernerportfoliosa.blob.core.windows.net/projects/portico-mapping.gif",
+        {
+          "kind": "video",
+          "src": "/media/portico-mapping.mp4",
+          "webm": "/media/portico-mapping.webm",
+          "poster": "/media/portico-mapping-poster.jpg",
+          "width": 800,
+          "height": 450
+        },
         "https://pchernerportfoliosa.blob.core.windows.net/projects/portico-mapping.jpg"
       ],
       "technologies": [
@@ -302,7 +358,14 @@
       "title": "FetchML",
       "description": "This little guy is an AI that was trained with Reinforcement Learning using Unity's ML Agents platform. With just 15 minutes of training Bruce was able to learn to play fetch naturally with basic rewards for getting the ball and returning it.",
       "images": [
-        "https://media.githubusercontent.com/media/PIC123/FetchML-Quest/main/resources/fetchMLdemo.gif"
+        {
+          "kind": "video",
+          "src": "/media/fetchMLdemo.mp4",
+          "webm": "/media/fetchMLdemo.webm",
+          "poster": "/media/fetchMLdemo-poster.jpg",
+          "width": 480,
+          "height": 270
+        }
       ],
       "url": "https://github.com/PIC123/FetchML-Quest",
       "startDate": "2021",
@@ -322,7 +385,14 @@
       "title": "Rock Paper Scissors (RPS) VR",
       "description": "This demo app combines the Oculus Quest's hand tracking with gesture recognition and MRTK-Quest to play Rock, Paper, Scissors.",
       "images": [
-        "https://github.com/PIC123/RockPaperScissors-Quest/blob/main/resources/rockPaperScissorsDemo.gif?raw=true"
+        {
+          "kind": "video",
+          "src": "/media/rockPaperScissorsDemo.mp4",
+          "webm": "/media/rockPaperScissorsDemo.webm",
+          "poster": "/media/rockPaperScissorsDemo-poster.jpg",
+          "width": 480,
+          "height": 270
+        }
       ],
       "url": "https://github.com/PIC123/RockPaperScissors-Quest",
       "startDate": "2021",
@@ -342,7 +412,14 @@
       "title": "Orion-MRTK",
       "description": "An adaptation of Leap Motion's Orion tech demo for the Oculus Quest, using hand tracking and leveraging MRTK for menus and interactions",
       "images": [
-        "https://media.githubusercontent.com/media/PIC123/OrionQuest-MRTK/main/resources/Orion-MRTK.gif"
+        {
+          "kind": "video",
+          "src": "/media/Orion-MRTK.mp4",
+          "webm": "/media/Orion-MRTK.webm",
+          "poster": "/media/Orion-MRTK-poster.jpg",
+          "width": 480,
+          "height": 270
+        }
       ],
       "url": "https://github.com/PIC123/OrionQuest-MRTK",
       "startDate": "2020",

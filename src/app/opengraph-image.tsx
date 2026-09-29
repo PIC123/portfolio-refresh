@@ -1,7 +1,8 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site";
 
-export const runtime = "edge";
+// No `runtime = "edge"`: that opts the route out of static generation, so the
+// OG card would be re-rendered on every crawl instead of built once.
 export const alt = `${siteConfig.name} — Creative Technologist`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -32,7 +33,9 @@ export default function OpengraphImage() {
             letterSpacing: 4,
           }}
         >
-          PC ◇ {siteConfig.location.toUpperCase()}
+          {/* ASCII only — Satori has no font fallback for decorative glyphs
+              here and renders them as tofu. */}
+          PC // {siteConfig.location.toUpperCase()}
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>

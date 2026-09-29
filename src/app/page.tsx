@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import portfolio from "@/data/portfolio.json";
 import { siteConfig } from "@/lib/site";
-import type { Project } from "@/types/Project";
+import { getProjects } from "@/lib/projects";
 import AsciiSparkles from "@/components/AsciiSparkles";
 import IntroHeading from "@/components/IntroHeading";
 import ProjectsGallery from "@/components/ProjectsGallery";
 import SectionDivider from "@/components/SectionDivider";
 
 export default function HomePage() {
-  const projects = portfolio.projects as Project[];
+  const projects = getProjects();
 
   return (
     <>
@@ -86,9 +86,9 @@ export default function HomePage() {
             <Image
               src="/images/ascii-self.png"
               alt={`Portrait of ${portfolio.name} Cherner rendered as ASCII art`}
-              width={480}
-              height={480}
-              className="rounded border border-white/30 w-full h-auto object-cover"
+              width={960}
+              height={1440}
+              className="rounded border border-white/30 w-full h-auto"
               sizes="(max-width: 1024px) 80vw, 320px"
             />
           </div>

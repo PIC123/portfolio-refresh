@@ -1,9 +1,9 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
-import type { Project } from "@/types/Project";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { normalizeMediaList, type Project } from "@/types/Project";
+import ProjectMedia from "@/components/ProjectMedia";
 
 type Props = {
   project: Project | null;
@@ -11,32 +11,53 @@ type Props = {
 };
 
 export default function ProjectModal({ project, onClose }: Props) {
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const previouslyFocused = useRef<HTMLElement | null>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  const imageCount = project?.images?.length ?? 0;
+  const media = useMemo(
+    () => normalizeMediaList(project?.images),
+    [project?.images],
+  );
+  const count = media.length;
 
   const next = useCallback(() => {
-    if (imageCount === 0) return;
-    setActiveImageIndex((i) => (i + 1) % imageCount);
-  }, [imageCount]);
+    if (count === 0) return;
+    setActiveIndex((i) => (i + 1) % count);
+  }, [count]);
 
   const prev = useCallback(() => {
-    if (imageCount === 0) return;
-    setActiveImageIndex((i) => (i - 1 + imageCount) % imageCount);
-  }, [imageCount]);
+    if (count === 0) return;
+    setActiveIndex((i) => (i - 1 + count) % count);
+  }, [count]);
 
+  // Reset the carousel only when the project itself changes — not when an
+  // unrelated parent re-render hands us a new callback identity.
   useEffect(() => {
-    if (!project) return;
-    setActiveImageIndex(0);
+    setActiveIndex(0);
+  }, [project?.id]);
+
+  // Focus management + scroll lock, keyed on open/close only.
+  const isOpen = project !== null;
+  useEffect(() => {
+    if (!isOpen) return;
     previouslyFocused.current = document.activeElement as HTMLElement | null;
     closeBtnRef.current?.focus();
 
     const original = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
+    const restore = previouslyFocused.current;
+    return () => {
+      document.body.style.overflow = original;
+      restore?.focus?.();
+    };
+  }, [isOpen]);
+
+  // Keyboard: Esc, arrows, and a focus trap.
+  useEffect(() => {
+    if (!isOpen) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         e.preventDefault();
@@ -64,14 +85,10 @@ export default function ProjectModal({ project, onClose }: Props) {
       }
     };
     document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = original;
-      previouslyFocused.current?.focus?.();
-    };
-  }, [project, onClose, next, prev]);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [isOpen, onClose, next, prev]);
 
-  // Touch swipe
+  // Touch swipe between media.
   const touchStartX = useRef<number | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -79,12 +96,13 @@ export default function ProjectModal({ project, onClose }: Props) {
   const onTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current == null) return;
     const dx = e.changedTouches[0].clientX - touchStartX.current;
-    if (Math.abs(dx) > 50) {
-      if (dx > 0) prev();
-      else next();
-    }
+    if (Math.abs(dx) > 50) (dx > 0 ? prev : next)();
     touchStartX.current = null;
   };
+
+  // Only close when the press *starts* on the backdrop — otherwise dragging a
+  // selection from inside the dialog and releasing outside would close it.
+  const pressStartedOnBackdrop = useRef(false);
 
   return (
     <AnimatePresence>
@@ -95,7 +113,15 @@ export default function ProjectModal({ project, onClose }: Props) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={onClose}
+          onMouseDown={(e) => {
+            pressStartedOnBackdrop.current = e.target === e.currentTarget;
+          }}
+          onMouseUp={(e) => {
+            if (pressStartedOnBackdrop.current && e.target === e.currentTarget) {
+              onClose();
+            }
+            pressStartedOnBackdrop.current = false;
+          }}
           role="presentation"
         >
           <motion.div
@@ -109,14 +135,13 @@ export default function ProjectModal({ project, onClose }: Props) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ type: "spring", stiffness: 280, damping: 24 }}
-            onClick={(e) => e.stopPropagation()}
           >
             <button
               ref={closeBtnRef}
               type="button"
               onClick={onClose}
               aria-label="Close project details"
-              className="absolute top-3 right-3 inline-flex h-10 w-10 items-center justify-center rounded border border-white/30 text-xl hover:border-white hover:bg-white hover:text-black transition"
+              className="absolute top-3 right-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded border border-white/30 bg-black/70 text-xl hover:border-white hover:bg-white hover:text-black transition"
             >
               ×
             </button>
@@ -133,27 +158,25 @@ export default function ProjectModal({ project, onClose }: Props) {
               </p>
             )}
 
-            {project.images && project.images.length > 0 && (
+            {count > 0 && (
               <div
                 className="relative w-full aspect-[16/9] overflow-hidden rounded mb-5 bg-black/60"
                 onTouchStart={onTouchStart}
                 onTouchEnd={onTouchEnd}
               >
-                <Image
-                  src={project.images[activeImageIndex]}
-                  alt={`${project.title} — image ${activeImageIndex + 1} of ${project.images.length}`}
-                  fill
+                <ProjectMedia
+                  key={activeIndex}
+                  media={media[activeIndex]}
+                  alt={`${project.title} — ${activeIndex + 1} of ${count}`}
                   sizes="(max-width: 768px) 100vw, 768px"
-                  className="object-cover"
-                  unoptimized={project.images[activeImageIndex]?.endsWith(".gif")}
                 />
 
-                {project.images.length > 1 && (
+                {count > 1 && (
                   <>
                     <button
                       type="button"
                       onClick={prev}
-                      aria-label="Previous image"
+                      aria-label="Previous media"
                       className="absolute left-2 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/60 font-pixel text-sm hover:bg-white hover:text-black transition"
                     >
                       ‹
@@ -161,7 +184,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                     <button
                       type="button"
                       onClick={next}
-                      aria-label="Next image"
+                      aria-label="Next media"
                       className="absolute right-2 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/60 font-pixel text-sm hover:bg-white hover:text-black transition"
                     >
                       ›
@@ -170,7 +193,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                       aria-hidden="true"
                       className="absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full bg-black/70 px-2 py-0.5 font-terminal text-xs"
                     >
-                      {activeImageIndex + 1} / {project.images.length}
+                      {activeIndex + 1} / {count}
                     </div>
                   </>
                 )}

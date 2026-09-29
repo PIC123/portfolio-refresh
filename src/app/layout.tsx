@@ -29,7 +29,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    creator: "@pcherner",
+    // `creator` intentionally omitted — an unverified handle here would
+    // credit the card to whoever actually owns it. Add it back once the
+    // real handle is confirmed.
   },
   robots: {
     index: true,
