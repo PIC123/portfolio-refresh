@@ -53,3 +53,9 @@ Designed for Vercel. Set `NEXT_PUBLIC_SITE_URL` in the project's environment var
 ## Notes
 
 - Large GIFs in `public/images/` (notably `INTER-suit-experience-1.gif`) should be converted to MP4/WebM and served via `<video autoplay muted loop playsinline>` to dramatically reduce bundle size. This is a follow-up — `ffmpeg` was not available in the environment when the audit was run.
+
+## Fun layer
+
+- **Shell**: press `` ` `` (or the `>_` nav button). `help` lists commands: `ls`, `open <project>`, `skin <name>`, `play`, `secrets`.
+- **Secrets**: ten easter eggs, tracked in `localStorage` and tallied in the footer. The registry is `src/lib/eggs.ts`; `secrets` in the shell shows hints.
+- **Projects**: each project has a page at `/projects/<slug>`. Set `"featured": true` in `src/data/portfolio.json` to put one in the homepage reel and the Selected Work grid.

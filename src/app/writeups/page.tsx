@@ -30,14 +30,19 @@ export default function WriteupsPage() {
         for short summaries and links.
       </p>
 
-      <div className="rounded border border-dashed border-white/30 p-6 font-terminal text-sm text-white/55">
-        <p className="mb-2 font-pixel text-xs text-white/70">{"// TODO"}</p>
-        <ul className="ml-5 list-disc space-y-1 marker:text-accent/60">
-          <li>Earth Mission Control — building VR for climate science</li>
-          <li>Generative AI visuals for Jordan Rudess at MIT</li>
-          <li>Tipping Points — projection-mapped climate Jenga</li>
-        </ul>
-      </div>
+      <ul className="space-y-3 font-pixel text-xs">
+        {[
+          ["earth-mission-control", "Earth Mission Control"],
+          ["jordan-rudess", "AI Visuals for Jordan Rudess"],
+          ["tipping-points", "Tipping Points"],
+        ].map(([slug, title]) => (
+          <li key={slug}>
+            <Link href={`/projects/${slug}`} className="hover:text-accent">
+              {title} →
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

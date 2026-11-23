@@ -15,7 +15,7 @@ export default function IntroHeading({ name, tagline }: Props) {
   return (
     <>
       <motion.h1
-        className="font-pixel text-3xl leading-tight md:text-5xl lg:text-6xl"
+        className="font-pixel text-3xl leading-tight md:text-4xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}

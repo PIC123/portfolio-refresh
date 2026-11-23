@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { normalizeMediaList, type Project } from "@/types/Project";
 import ProjectMedia from "@/components/ProjectMedia";
@@ -221,6 +222,12 @@ export default function ProjectModal({ project, onClose }: Props) {
             )}
 
             <div className="flex flex-wrap gap-3">
+              <Link
+                href={`/projects/${project.slug}`}
+                className="rounded border border-white/40 px-4 py-2 font-pixel text-xs hover:border-white hover:bg-white hover:text-black transition"
+              >
+                Full page →
+              </Link>
               {project.url && (
                 <a
                   href={project.url}

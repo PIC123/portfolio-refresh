@@ -1,8 +1,15 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { pixelFont, terminalFont } from "./fonts";
+import { allFontVariables } from "./fonts";
 import { siteConfig } from "@/lib/site";
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import Playground from "@/components/fun/Playground";
+import Terminal from "@/components/fun/Terminal";
+import SkinFeatures from "@/components/skins/SkinFeatures";
+import { AudioProvider } from "@/components/skins/audio/AudioProvider";
+import { getProjects } from "@/lib/projects";
+import { SKIN_INIT_SCRIPT } from "@/lib/skin-init";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -78,19 +85,33 @@ export default function RootLayout({
     sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
   };
 
+  const terminalProjects = getProjects().map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    year: p.startDate,
+  }));
+
   return (
-    <html
-      lang="en"
-      className={`${pixelFont.variable} ${terminalFont.variable}`}
-    >
-      <body className="bg-black text-white font-terminal antialiased">
+    // suppressHydrationWarning: the inline script below sets data-theme
+    // before React hydrates, so the attribute legitimately differs.
+    <html lang="en" className={allFontVariables} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: SKIN_INIT_SCRIPT }} />
+      </head>
+      <body className="font-terminal antialiased">
         <a href="#main" className="skip-link font-pixel text-xs">
           Skip to content
         </a>
-        <Nav />
-        <main id="main" className="pt-20 sm:pt-24">
-          {children}
-        </main>
+        <AudioProvider>
+          <Nav />
+          <main id="main" className="relative z-[1] pt-20 sm:pt-24">
+            {children}
+          </main>
+          <Footer />
+          <SkinFeatures />
+          <Terminal projects={terminalProjects} />
+          <Playground />
+        </AudioProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}

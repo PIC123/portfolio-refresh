@@ -2,7 +2,7 @@
   "name": "Phil",
   "headerTaglineOne": "Building Digital Experiences And Products That Inspire",
   "headerTaglineTwo": "Hey there! 👋 My name's Phil",
-  "headerTaglineThree": " I love building new technologies and experiences that inspire and shape the future of human-computer interaction.",
+  "headerTaglineThree": "I build installations, XR worlds and AI systems you can step inside.",
   "headerTaglineFour": "Based in Cambridge, MA",
   "showCursor": false,
   "showBlog": false,
@@ -51,7 +51,9 @@
           "class": "devicon-arduino-plain",
           "name": "Kinect"
         }
-      ]
+      ],
+      "slug": "inter",
+      "featured": true
     },
     {
       "id": "-1",
@@ -89,7 +91,9 @@
           "class": "fa-robot",
           "name": "Generative AI"
         }
-      ]
+      ],
+      "slug": "jordan-rudess",
+      "featured": true
     },
     {
       "id": "2",
@@ -130,7 +134,9 @@
           "class": "devicon-vr-ar",
           "name": "VR/AR"
         }
-      ]
+      ],
+      "slug": "earth-mission-control",
+      "featured": true
     },
     {
       "id": "3",
@@ -175,7 +181,8 @@
           "class": "devicon-vr-ar",
           "name": "VR/AR"
         }
-      ]
+      ],
+      "slug": "earthbot"
     },
     {
       "id": "0",
@@ -212,7 +219,9 @@
           "class": "fa-robot",
           "name": "Generative AI"
         }
-      ]
+      ],
+      "slug": "natural-harmony",
+      "featured": true
     },
     {
       "id": "1",
@@ -235,7 +244,8 @@
           "class": "fa fa-cogs",
           "name": "Projection Mapping"
         }
-      ]
+      ],
+      "slug": "portico"
     },
     {
       "id": "4",
@@ -265,7 +275,8 @@
           "class": "fa-robot",
           "name": "Generative AI"
         }
-      ]
+      ],
+      "slug": "emote"
     },
     {
       "id": "5",
@@ -289,14 +300,14 @@
           "class": "fa-robot",
           "name": "Generative AI"
         }
-      ]
+      ],
+      "slug": "tipping-points"
     },
     {
       "id": "6",
       "title": "DreamWeaver",
       "description": "An AI powered illustrated storybook that allows users to create limitless stories, fostering imagination and creativity by offering a platform for unlimited narrative exploration. User's co-create infinite choose-your-own-adventure stories with the AI about any topic, in any setting they want.",
       "images": [
-        "https://raw.githubusercontent.com/PIC123/DreamWeaver/main/src/background.png",
         "https://pchernerportfoliosa.blob.core.windows.net/projects/dreamweaver.png"
       ],
       "url": "https://mango-flower-0aa90fa0f.3.azurestaticapps.net/",
@@ -318,7 +329,8 @@
           "class": "fa-robot",
           "name": "Generative AI"
         }
-      ]
+      ],
+      "slug": "dreamweaver"
     },
     {
       "id": "7",
@@ -351,7 +363,8 @@
           "class": "fa-phone",
           "name": "Twilio"
         }
-      ]
+      ],
+      "slug": "dreammachine"
     },
     {
       "id": "8",
@@ -378,7 +391,8 @@
           "class": "fa-robot",
           "name": "Reinforcement Learning"
         }
-      ]
+      ],
+      "slug": "fetchml"
     },
     {
       "id": "9",
@@ -405,7 +419,8 @@
           "class": "fa-vr-cardboard",
           "name": "VR"
         }
-      ]
+      ],
+      "slug": "rps-vr"
     },
     {
       "id": "10",
@@ -432,7 +447,8 @@
           "class": "devicon-vr-ar",
           "name": "VR"
         }
-      ]
+      ],
+      "slug": "orion-mrtk"
     },
     {
       "id": "12",
@@ -452,7 +468,8 @@
           "class": "devicon-react-original",
           "name": "React"
         }
-      ]
+      ],
+      "slug": "vott"
     },
     {
       "id": "11",
@@ -471,7 +488,8 @@
           "class": "devicon-vr-ar",
           "name": "AR"
         }
-      ]
+      ],
+      "slug": "artbot"
     },
     {
       "id": "13",
@@ -494,7 +512,8 @@
           "class": "devicon-arduino-plain",
           "name": "Arduino"
         }
-      ]
+      ],
+      "slug": "vr-haptics"
     }
   ],
   "services": [
@@ -561,9 +580,9 @@
       "imgSrc": "/images/html.svg"
     }
   ],
-  "aboutParaOne": "I'm a highly motivated engineer with years of experience working in fast-paced, interdisciplinary environments. I have a very strong background in C#, Javascript/Typescript, Python and Unity. With experience creating applications for a range of AR/VR technologies, I'm passionate about building new technologies and experiences that inspire in order to develop the future of human/computer interaction.",
-  "aboutParaTwo": "I recently completed my Masters in AI at MIT and am doing research at the MIT Media Lab under Prof. Dava Newman, combining generative AI, mixed reality, and climate data. Previously I have worked at Microsoft on the Commercial Software Engineering team (CSE) where we collaborate with Microsoft's top partners, ranging from start-ups to fortune 500 companies across many industries. We work alongside their lead engineers, developing solutions to solve the company's toughest technical problems.",
-  "aboutParaThree": "Before that, I was doing research in the Fluid Interfaces group at the MIT Media Lab and worked with the Robot Locomotion Group in MIT CSAIL while studying Electrical Engineering & Computer Science at MIT.",
+  "aboutParaOne": "I make technology you can walk into, wave at, or talk to. My work lives where generative AI meets physical space: a museum installation that tracks your body into a virtual space suit, a VR room where climate scientists tell data stories, visuals that improvise alongside a live musician.",
+  "aboutParaTwo": "I did my Master’s at MIT in AI and human-computer interaction, with research at the MIT Media Lab under Prof. Dava Newman, where I built Earth Mission Control — a multi-user VR platform for climate data. Before that I spent five years at Microsoft: first as an engineer embedded with partner teams, where I co-led the refactor of VoTT (an open-source labeling tool with 3,700+ GitHub stars), then as a program manager on the Responsible AI team.",
+  "aboutParaThree": "Earlier, I studied computer science at MIT with a minor in philosophy, and did research in the Fluid Interfaces group at the Media Lab and with the Robot Locomotion Group at CSAIL. These days I work mostly in Unity, TouchDesigner, Python and TypeScript.",
   "resume": {
     "tagline": "👋  I'm a graduate research assistant, software engineer, designer, tinkerer",
     "description": "Highly motivated engineer, researcher, presenter, and designer with extensive experience in fast-paced, interdisciplinary environments. Strong expertise in C#, JavaScript/TypeScript, Python, and Unity, with a proven track record of developing applications involving AI and spatial technologies. Passionate about creating innovative technologies and experiences that inspire and shape the future of human-computer interaction.",

@@ -14,6 +14,7 @@ function isValid(p: unknown): p is Project {
   const c = p as Partial<Project>;
   return (
     typeof c.id === "string" &&
+    typeof c.slug === "string" &&
     typeof c.title === "string" &&
     typeof c.description === "string"
   );
@@ -43,4 +44,12 @@ export function getProjects(): Project[] {
   }
 
   return valid;
+}
+
+export function getProject(slug: string): Project | undefined {
+  return getProjects().find((p) => p.slug === slug);
+}
+
+export function getFeaturedProjects(): Project[] {
+  return getProjects().filter((p) => p.featured);
 }

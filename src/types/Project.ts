@@ -61,6 +61,10 @@ export function normalizeMediaList(raw: RawMedia[] | undefined): ProjectMedia[] 
 
 export interface Project {
   id: string;
+  /** URL segment for /projects/[slug]. */
+  slug: string;
+  /** Featured projects lead the homepage and feed the hero reel. */
+  featured?: boolean;
   title: string;
   description: string;
   url?: string;
