@@ -50,10 +50,6 @@ Content lives in `src/data/portfolio.json` — edit there, no code changes neede
 
 Designed for Vercel. Set `NEXT_PUBLIC_SITE_URL` in the project's environment variables.
 
-## Notes
-
-- Large GIFs in `public/images/` (notably `INTER-suit-experience-1.gif`) should be converted to MP4/WebM and served via `<video autoplay muted loop playsinline>` to dramatically reduce bundle size. This is a follow-up — `ffmpeg` was not available in the environment when the audit was run.
-
 ## Fun layer
 
 - **Shell**: press `` ` `` (or the `>_` nav button). `help` lists commands: `ls`, `open <project>`, `skin <name>`, `play`, `secrets`.
