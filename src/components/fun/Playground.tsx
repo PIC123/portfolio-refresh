@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { EGGS, EGG_EVENT, noteSkinTried, unlockEgg, type EggId } from "@/lib/eggs";
 import { DEFAULT_SKIN, SKIN_IDS } from "@/lib/skins";
@@ -19,7 +18,6 @@ type Toast = { name: string; count: number };
  * page, the console note) and announces each find once.
  */
 export default function Playground() {
-  const pathname = usePathname();
   const [toast, setToast] = useState<Toast | null>(null);
   const { state: audio } = useAudio();
 
@@ -87,11 +85,6 @@ export default function Playground() {
     window.addEventListener("pc-skin-change", onSkin);
     return () => window.removeEventListener("pc-skin-change", onSkin);
   }, []);
-
-  // The page no link points to.
-  useEffect(() => {
-    if (pathname === "/oauth") unlockEgg("handshake");
-  }, [pathname]);
 
   // A note for people who open devtools.
   useEffect(() => {

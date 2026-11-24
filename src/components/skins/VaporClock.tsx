@@ -28,7 +28,7 @@ export default function VaporClock() {
   return (
     <aside
       aria-label="Clock (decorative)"
-      className="fixed bottom-4 left-4 z-40 skin-surface select-none"
+      className="fixed bottom-3 left-3 z-40 origin-bottom-left scale-[0.6] skin-surface select-none sm:bottom-4 sm:left-4 sm:scale-100"
       style={{
         background: "rgba(26,0,42,0.8)",
         padding: "12px 18px",

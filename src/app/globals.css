@@ -499,8 +499,8 @@ body {
 }
 /* Leave room for the mobile Winamp dock at the bottom */
 @media (max-width: 639px) {
-  [data-theme="winamp-classic"] main {
-    padding-bottom: 92px;
+  [data-theme="winamp-classic"] footer {
+    padding-bottom: 84px;
   }
 }
 
@@ -519,7 +519,6 @@ body {
   }
   [data-theme="gameboy"] main {
     padding-top: calc(5rem + 24px);
-    padding-bottom: 80px;
   }
 }
 
@@ -640,4 +639,24 @@ html[data-party="on"] body {
 }
 .toast-in {
   animation: toast-in 220ms ease-out both;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Keep the footer reachable under fixed skin widgets                         */
+/* -------------------------------------------------------------------------- */
+
+/* The widgets are position:fixed at the bottom of the viewport, so at the end
+   of the page they would sit on top of the footer links. The footer grows by
+   the widget's height so the links can scroll clear of it. */
+[data-theme="llama"] footer { padding-bottom: 96px; }
+[data-theme="matrix"] footer { padding-bottom: 176px; }
+[data-theme="vaporwave"] footer { padding-bottom: 120px; }
+@media (max-width: 639px) {
+  [data-theme="vaporwave"] footer { padding-bottom: 84px; }
+}
+@media (min-width: 640px) {
+  [data-theme="winamp-classic"] footer { padding-bottom: 290px; }
+}
+@media (min-width: 1024px) {
+  [data-theme="gameboy"] footer { padding-bottom: 96px; }
 }

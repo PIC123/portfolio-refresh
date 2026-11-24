@@ -26,7 +26,7 @@ export default function VaporCounter() {
   return (
     <aside
       aria-label="Visitor counter (decorative)"
-      className="fixed top-16 right-3 z-40 select-none"
+      className="fixed top-[7.75rem] right-3 z-40 select-none"
       style={{
         fontFamily: "var(--font-retro), 'Audiowide', sans-serif",
       }}

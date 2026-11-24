@@ -100,8 +100,13 @@ export default function Terminal({ projects }: { projects: TerminalProject[] }) 
           ].forEach(say);
           break;
         case "ls":
+          // Three columns only where they fit; phones get year + slug.
           projects.forEach((p) =>
-            say(`${(p.year ?? "----").padEnd(6)}${p.slug.padEnd(24)}${p.title}`),
+            say(
+              window.innerWidth >= 640
+                ? `${(p.year ?? "----").padEnd(6)}${p.slug.padEnd(24)}${p.title}`
+                : `${(p.year ?? "----").padEnd(6)}${p.slug}`,
+            ),
           );
           break;
         case "open":
@@ -288,7 +293,10 @@ export default function Terminal({ projects }: { projects: TerminalProject[] }) 
             autoCorrect="off"
             autoComplete="off"
             spellCheck={false}
-            className="w-full bg-transparent font-terminal text-base text-white outline-none sm:text-sm"
+            className="w-full bg-transparent font-terminal text-base text-white sm:text-sm"
+            // Inline, because the global focus ring is unlayered CSS and
+            // would beat a utility class; the framed shell is cue enough.
+            style={{ outline: "none" }}
           />
         </form>
       </div>

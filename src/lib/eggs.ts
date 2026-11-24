@@ -11,7 +11,6 @@ export const EGGS = [
   { id: "sudo", name: "Nice try", hint: "Ask the shell for more power." },
   { id: "console", name: "Inspector", hint: "Developers leave notes for developers." },
   { id: "lost", name: "Lost in space", hint: "Get lost, then score 10." },
-  { id: "handshake", name: "Secret handshake", hint: "A page no link points to." },
 ] as const;
 
 export type EggId = (typeof EGGS)[number]["id"];
