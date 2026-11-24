@@ -10,7 +10,7 @@ type Props = {
   media?: ProjectMedia;
   alt: string;
   sizes: string;
-  /** Card thumbnails only need a still; the modal plays the clip. */
+  /** Force the poster still instead of the clip. */
   still?: boolean;
   priority?: boolean;
   className?: string;
@@ -69,7 +69,6 @@ export default function ProjectMedia({
   }
 
   if (media.kind === "video") {
-    // Thumbnails use the poster still: no video decoding in a 14-card grid.
     if (still) {
       return (
         <Image
@@ -92,8 +91,10 @@ export default function ProjectMedia({
         muted
         loop
         playsInline
-        autoPlay
-        preload="metadata"
+        // No autoPlay attribute and no preload: the observer above starts the
+        // clip when it scrolls into view, so a grid of cards only downloads
+        // the videos actually on screen.
+        preload="none"
         aria-label={alt}
         className={`h-full w-full object-contain ${className}`}
       >

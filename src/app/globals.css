@@ -660,3 +660,11 @@ html[data-party="on"] body {
 @media (min-width: 1024px) {
   [data-theme="gameboy"] footer { padding-bottom: 96px; }
 }
+
+/* Scrollable strips that shouldn't show a scrollbar (hero reel). */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

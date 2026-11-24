@@ -68,7 +68,6 @@ export default function ProjectsGallery({ projects }: Props) {
                   <ProjectMedia
                     media={media[0]}
                     alt=""
-                    still
                     priority={index < 2}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="transition-transform duration-300 group-hover:scale-[1.03]"
@@ -161,7 +160,6 @@ export default function ProjectsGallery({ projects }: Props) {
                     <ProjectMedia
                       media={media[0]}
                       alt=""
-                      still
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="transition-transform duration-300 group-hover:scale-[1.03]"
                     />
